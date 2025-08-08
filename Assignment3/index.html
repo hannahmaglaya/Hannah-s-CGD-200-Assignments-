@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hannah's Ink Drawings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .lightbox {
+            visibility: hidden;
+            opacity: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        .lightbox:target {
+            visibility: visible;
+            opacity: 1;
+        }
+        .lightbox-content {
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 2px;
+            object-fit: contain;
+        }
+        .lightbox-caption {
+            margin-top: 1rem;
+            color: #fff;
+            text-align: center;
+            font-size: 1.5rem;
+            max-width: 80%;
+        }
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 3rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .close:hover {
+            color: #bbb;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Hannah's Ink Drawings</a>
+            <div class="space-x-4">
+                <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-gray-900">Portfolio</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+
+        <section class="text-center py-16 bg-gray-100 rounded-sm mb-12">
+            <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Hey, Welcome to My Art!</h1>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                This is a collection of my ink drawings. I love drawing buildings and cool structures, but you'll find other random stuff here too!
+            </p>
+        </section>
+
+        <section id="about" class="mb-12">
+            <div class="bg-white p-8 rounded-sm shadow-lg">
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">About Me</h2>
+                <p class="text-gray-700 leading-relaxed text-lg">
+                    I'm Hannah, and I started doing ink drawings when I got super bored with COVID during the pandemic. I just grabbed some ink and paper, and it became a thing! I even did Inktober back in 2022. I'm really interested in architectural stuff and how buildings look, so you'll see a lot of that in my drawings.
+                </p>
+            </div>
+        </section>
+
+        <section id="portfolio">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Portfolio</h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="#lightbox-1" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="1.jpeg" alt="Fairy ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-2" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="2.jpeg" alt="Ruff ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-3" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="3.jpeg" alt="Pony Tail ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-4" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="4.jpeg" alt="Scrape ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-5" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="5.jpeg" alt="Salty ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-6" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="6.jpeg" alt="Fowl ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-7" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="7.jpg" alt="Armadillo ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-8" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="8.jpeg" alt="Forget ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-9" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="9.jpeg" alt="Eagle ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-10" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="10.jpeg" alt="Crabby ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                
+                <a href="#lightbox-11" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="11.jpeg" alt="Nest ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-12" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="12.jpeg" alt="Match ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-13" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="13.jpeg" alt="Flame ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-14" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="14.jpeg" alt="Scurry ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-15" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="15.jpg" alt="Japanese castle ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-16" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="16.jpg" alt="Hoi An river ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-17" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="17.jpg" alt="Alleyway vendor ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-18" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="18.jpg" alt="Forest flight ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-19" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="19.jpg" alt="Venice canal ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-20" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="20.jpeg" alt="Bouquet ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-21" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="21.jpg" alt="Davao gazebo ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-22" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="22.jpg" alt="Burj Khalifa inspired ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+                <a href="#lightbox-23" class="block">
+                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+                        <img src="23.jpg" alt="Palermo Sicily ink drawing" class="w-full h-auto object-cover">
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-4 mt-12">
+        <p>&copy; 2024 Hannah's Ink Drawings. All rights reserved.</p>
+    </footer>
+
+    <div id="lightbox-1" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="1.jpeg" alt="Fairy ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A detailed ink drawing of fairy wings, pinned like a specimen.</div>
+    </div>
+    <div id="lightbox-2" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="2.jpeg" alt="Ruff ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A cool dog wearing sunglasses and a hoodie.</div>
+    </div>
+    <div id="lightbox-3" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="3.jpeg" alt="Pony Tail ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A drawing of a pony from behind, showing its intricate tail.</div>
+    </div>
+    <div id="lightbox-4" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="4.jpeg" alt="Scrape ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A hand scraping a large plant or vegetable on a plate.</div>
+    </div>
+    <div id="lightbox-5" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="5.jpeg" alt="Salty ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An detailed drawing of a seahorse.</div>
+    </div>
+    <div id="lightbox-6" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="6.jpeg" alt="Fowl ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A close-up ink drawing of a bird's head.</div>
+    </div>
+    <div id="lightbox-7" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="7.jpg" alt="Armadillo ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A drawing of a curled-up armadillo.</div>
+    </div>
+    <div id="lightbox-8" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="8.jpeg" alt="Forget ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A whimsical drawing of a brain with glasses and a question mark.</div>
+    </div>
+    <div id="lightbox-9" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="9.jpeg" alt="Eagle ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An intense close-up of an eagle's face.</div>
+    </div>
+    <div id="lightbox-10" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="10.jpeg" alt="Crabby ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A drawing of a bottle of "Crabby Soy Sauce".</div>
+    </div>
+    <div id="lightbox-11" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="11.jpeg" alt="Nest ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An intricate ink drawing of a wasp nest built on a branch.</div>
+    </div>
+    <div id="lightbox-12" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="12.jpeg" alt="Match ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A drawing of two fish, resembling koi, in a yin-yang style.</div>
+    </div>
+    <div id="lightbox-13" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="13.jpeg" alt="Flame ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A crinkled piece of paper with the word "FLAME" written on it.</div>
+    </div>
+    <div id="lightbox-14" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="14.jpeg" alt="Scurry ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A detailed drawing of a crab on a beach.</div>
+    </div>
+    <div id="lightbox-15" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="15.jpg" alt="Japanese castle ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An architectural drawing of a traditional Japanese castle with a bridge.</div>
+    </div>
+    <div id="lightbox-16" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="16.jpg" alt="Hoi An river ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An architectural landscape drawing of buildings along a river in Hoi An, Vietnam.</div>
+    </div>
+    <div id="lightbox-17" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="17.jpg" alt="Alleyway vendor ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An architectural drawing of a person carrying baskets in a narrow alley.</div>
+    </div>
+    <div id="lightbox-18" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="18.jpg" alt="Forest flight ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A drawing of a forest of pine trees with birds flying overhead.</div>
+    </div>
+    <div id="lightbox-19" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="19.jpg" alt="Venice canal ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An architectural drawing of a bridge over a canal in what looks like Venice.</div>
+    </div>
+    <div id="lightbox-20" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="20.jpeg" alt="Bouquet ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">A drawing of a bouquet of sunflowers.</div>
+    </div>
+    <div id="lightbox-21" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="21.jpg" alt="Davao gazebo ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An architectural drawing of a gazebo on the water in Davao.</div>
+    </div>
+    <div id="lightbox-22" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="22.jpg" alt="Burj Khalifa inspired ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An architectural drawing of a towering skyscraper, inspired by the Burj Khalifa.</div>
+    </div>
+    <div id="lightbox-23" class="lightbox">
+        <a href="#" class="close">&times;</a>
+        <img src="23.jpg" alt="Palermo Sicily ink drawing" class="lightbox-content">
+        <div class="lightbox-caption">An architectural drawing of a large domed building and cobblestone streets in Palermo, Sicily.</div>
+    </div>
+
+</body>
+</html>
