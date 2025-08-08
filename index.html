@@ -1,294 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jane Doe - Artist</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* CSS for the entire website */
-        :root {
-            --bg-color: #f4f4f4;
-            --text-color: #333;
-            --primary-color: #000;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            margin: 0;
-            line-height: 1.6;
-            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem;
-        }
-
-        header {
-            background-color: #fff;
-            padding: 1.5rem 0;
-            border-bottom: 2px solid var(--primary-color);
-            position: sticky; /* Keeps the header fixed at the top */
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .header-content h1 {
-            margin: 0 0 1rem 0;
-            font-size: 2.5rem;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 700;
-            font-size: 1.25rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-            /* Removed border-radius for sharper edges */
-        }
-
-        nav a:hover {
-            border: 1px solid var(--primary-color);
-            background-color: var(--primary-color);
-            color: #fff;
-        }
-
-        main {
-            padding: 2rem 0;
-        }
-
-        h2 {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 1rem;
-        }
-
-        /* --- Grid for the portfolio gallery --- */
-        .portfolio-grid {
-            display: grid;
-            /* Sets a responsive grid with columns that automatically fit */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .portfolio-item {
-            background-color: #fff;
-            border: 1px solid var(--primary-color);
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            /* Removed border-radius for sharper edges */
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-
-        .portfolio-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-bottom: 1px solid var(--primary-color);
-        }
-
-        .portfolio-item-caption {
-            padding: 1rem;
-        }
-        
-        .portfolio-item-caption h3 {
-            margin: 0;
-            font-size: 1.2rem;
-        }
-
-        /* --- About and Contact sections styling --- */
-        .about-content, .contact-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        .contact-content a {
-            color: var(--primary-color);
-            font-weight: 700;
-        }
-
-        /* --- Footer styling --- */
-        footer {
-            text-align: center;
-            padding: 1.5rem 0;
-            border-top: 2px solid var(--primary-color);
-            background-color: #fff;
-            margin-top: 2rem;
-        }
-
-        /* Media queries for smaller screens */
-        @media (min-width: 768px) {
-            .header-content {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-
-            .header-content h1 {
-                margin-bottom: 0;
-            }
-
-            nav ul {
-                gap: 2rem;
-            }
-        }
-
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hannah's Assignments</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Bebas Neue', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+    .assignment-link {
+      display: block;
+      margin: 20px auto;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: #0077cc;
+      border: 2px solid #0077cc;
+      padding: 10px 20px;
+      border-radius: 8px;
+      width: fit-content;
+      transition: all 0.3s ease;
+    }
+    .assignment-link:hover {
+      background-color: #0077cc;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Header and Navigation -->
-    <header>
-        <div class="container header-content">
-            <h1>Jane Doe</h1>
-            <nav>
-                <ul>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Work Section -->
-        <section id="work" class="container">
-            <h2>Selected Works</h2>
-            <div class="portfolio-grid">
-                <!-- Portfolio Item 1 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.52.08 PM (1).jpg-caa643a1-30ee-4e8e-9783-b78e726ce5c4" alt="Palermo, Sicily sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>Palermo, Sicily</h3>
-                    </div>
-                </div>
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.52.08 PM.jpg-190965db-ac28-4f8e-9444-383466edf3c9" alt="Osaka Castle sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>Osaka Castle</h3>
-                    </div>
-                </div>
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.51.22 PM.jpg-d6362ec7-2f69-4952-8569-49c24b18b75a" alt="Burj Khalifa sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>Burj Khalifa</h3>
-                    </div>
-                </div>
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.51.12 PM.jpg-8224aef4-c024-4437-995f-58458b19be3c" alt="Lake House sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>Lake House</h3>
-                    </div>
-                </div>
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.45.42 PM (19).jpg-53b9953e-d4f9-4349-8d8a-eea540d56c29" alt="Venice Canal sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>Venice Canal</h3>
-                    </div>
-                </div>
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.45.42 PM (18).jpg-5d774087-f1b1-4945-aebf-b3294a1f606d" alt="Forestscape sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>Forestscape</h3>
-                    </div>
-                </div>
-                <!-- Portfolio Item 7 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.45.42 PM (17).jpg-0c526718-1e4f-422a-b1aa-6bbeb40444bb" alt="Street Vendor sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>Street Vendor</h3>
-                    </div>
-                </div>
-                <!-- Portfolio Item 8 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.45.42 PM (16).jpg-2e107df5-c4b8-426f-b277-11c406f88393" alt="River Scene sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>River Scene</h3>
-                    </div>
-                </div>
-                <!-- Portfolio Item 9 -->
-                <div class="portfolio-item">
-                    <img src="WhatsApp Image 2025-08-07 at 9.45.42 PM (14).jpeg-41602387-7e3a-4a12-bc1e-78b9dd0ee1d3" alt="Crab sketch">
-                    <div class="portfolio-item-caption">
-                        <h3>Crab</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="container">
-            <h2>About the Artist</h2>
-            <div class="about-content">
-                <p>
-                    Jane Doe is an artist specializing in black and white ink drawings of architecture and landscapes. Her work is characterized by intricate line work and a keen eye for detail, often capturing the essence of a place through its structural form. Inspired by architectural blueprints and classic etchings, her style blends precision with artistic expression.
-                </p>
-                <p>
-                    With a background in design, Jane brings a unique perspective to her art, focusing on the interplay of light, shadow, and texture to create depth and dimension. Her pieces invite viewers to explore the world through a monochromatic lens, appreciating the beauty of form and composition.
-                </p>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="container">
-            <h2>Get in Touch</h2>
-            <div class="contact-content">
-                <p>
-                    For inquiries about commissions, collaborations, or sales, please feel free to reach out.
-                </p>
-                <div class="space-y-4">
-                    <p><strong>Email:</strong> <a href="mailto:janedoe@example.com">janedoe@example.com</a></p>
-                    <p><strong>Instagram:</strong> <a href="#">@janedoe_art</a></p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Hannah Maglaya. All rights reserved.</p>
-        </div>
-    </footer>
-
+  <h1>Hannah's Assignments</h1>
+  <a class="assignment-link" href="Assignment1/index.html">View Assignment 1 – Places</a>
+  <a class="assignment-link" href="Assignment2/index.html">View Assignment 2 – Shows</a>
+  <a class="assignment-link" href="Assignment3/index.html">View Assignment 3 – Artwork</a>
 </body>
 </html>
