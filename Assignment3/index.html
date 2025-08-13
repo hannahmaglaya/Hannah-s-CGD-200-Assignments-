@@ -7,14 +7,171 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        body {
+            background-color: #f9fafb;
+            color: #1f2937;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
         .bebas-font {
             font-family: 'Bebas Neue', sans-serif;
         }
+
         .poppins-font {
             font-family: 'Poppins', sans-serif;
         }
+
+        .main-header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #111827;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            color: #4b5563;
+            transition-property: color;
+            transition-duration: 300ms;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: #111827;
+        }
+
+        .main-content {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 4rem;
+            background-color: #f3f4f6;
+            border-radius: 0.125rem;
+            margin-bottom: 3rem;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.125rem;
+            color: #4b5563;
+            max-width: 42rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-section {
+            margin-bottom: 3rem;
+        }
+
+        .about-card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.125rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-title {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            color: #374151;
+            line-height: 1.625;
+            font-size: 1.125rem;
+        }
+
+        .portfolio-section {
+            text-align: center;
+        }
+
+        .portfolio-title {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 2rem;
+        }
+        
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .artwork-item {
+            background-color: #ffffff;
+            border-radius: 0.125rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transform: scale(1);
+            transition: transform 300ms ease-in-out;
+            cursor: pointer;
+        }
+        .artwork-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .artwork-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .main-footer {
+            background-color: #1f2937;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+
         .lightbox {
             visibility: hidden;
             opacity: 0;
@@ -30,6 +187,7 @@
             justify-content: center;
             align-items: center;
             transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            text-decoration: none;
         }
         .lightbox:target {
             visibility: visible;
@@ -49,7 +207,7 @@
             font-size: 1.5rem;
             max-width: 80%;
         }
-        .close {
+        .close-button {
             position: absolute;
             top: 1rem;
             right: 2rem;
@@ -57,173 +215,165 @@
             font-size: 3rem;
             font-weight: bold;
             transition: color 0.3s;
+            text-decoration: none;
         }
-        .close:hover {
+        .close-button:hover {
             color: #bbb;
-        }
-        .artwork-item, .artwork-item img {
-            cursor: pointer;
-        }
-        .full-screen-lander {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 poppins-font">
+<body>
 
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl font-bold text-gray-900 bebas-font">Hannah's Ink Drawings</a>
-            <div class="space-x-4 poppins-font">
-                <a href="#about" class="text-gray-600 hover:text-gray-900">About</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-gray-900">Portfolio</a>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="#" class="site-title bebas-font">Hannah's Ink Drawings</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link poppins-font">About</a>
+                <a href="#portfolio" class="nav-link poppins-font">Portfolio</a>
             </div>
         </nav>
     </header>
 
-    <main class="container mx-auto px-4 py-8">
-
-        <section class="text-center py-16 bg-gray-100 rounded-sm mb-12 full-screen-lander">
-            <h1 class="text-5xl font-extrabold text-gray-900 mb-4 bebas-font">Hey, Welcome to My Art!</h1>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto poppins-font">
+    <main class="main-content">
+        <section class="hero-section">
+            <h1 class="hero-title bebas-font">Hey, Welcome to My Art!</h1>
+            <p class="hero-subtitle poppins-font">
                 This is a collection of my ink drawings. This is the first time I'm sharing my art.
             </p>
         </section>
 
-        <section id="about" class="mb-12">
-            <div class="bg-white p-8 rounded-sm shadow-lg">
-                <h2 class="text-4xl font-bold text-gray-900 mb-6 bebas-font">About Me</h2>
-                <p class="text-gray-700 leading-relaxed text-lg poppins-font">
+        <section id="about" class="about-section">
+            <div class="about-card">
+                <h2 class="about-title bebas-font">About Me</h2>
+                <p class="about-text poppins-font">
                     I'm Hannah, and I started doing ink drawings when I had COVID thrice during the pandemic. I studied Ink Drawiwing. I'm lazy, so I don't use a pencil. These are 2020-2022 drawings. Maybe I'll do Inktober 2025. I don't know.
+                </p>
+            </div>
         </section>
 
-        <section id="portfolio">
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center bebas-font">Black Ink and White Paper</h2>
-            <div class="grid grid-cols-3 gap-8">
-                <a href="#lightbox-15" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="15.jpeg" alt="Japanese castle ink drawing" class="w-full h-auto object-cover">
+        <section id="portfolio" class="portfolio-section">
+            <h2 class="portfolio-title bebas-font">Black Ink and White Paper</h2>
+            <div class="artwork-grid">
+                <a href="#lightbox-15">
+                    <div class="artwork-item">
+                        <img src="15.jpeg" alt="Japanese castle ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-16" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="16.jpeg" alt="Hoi An river ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-16">
+                    <div class="artwork-item">
+                        <img src="16.jpeg" alt="Hoi An river ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-17" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="17.jpeg" alt="Alleyway vendor ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-17">
+                    <div class="artwork-item">
+                        <img src="17.jpeg" alt="Alleyway vendor ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-19" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="19.jpeg" alt="Venice canal ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-19">
+                    <div class="artwork-item">
+                        <img src="19.jpeg" alt="Venice canal ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-21" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="21.jpeg" alt="Davao gazebo ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-21">
+                    <div class="artwork-item">
+                        <img src="21.jpeg" alt="Davao gazebo ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-22" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="22.jpeg" alt="Burj Khalifa inspired ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-22">
+                    <div class="artwork-item">
+                        <img src="22.jpeg" alt="Burj Khalifa inspired ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-23" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="23.JPG" alt="Palermo Sicily ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-23">
+                    <div class="artwork-item">
+                        <img src="23.JPG" alt="Palermo Sicily ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-1" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="1.jpeg" alt="Fairy ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-1">
+                    <div class="artwork-item">
+                        <img src="1.jpeg" alt="Fairy ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-2" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="2.jpeg" alt="Ruff ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-2">
+                    <div class="artwork-item">
+                        <img src="2.jpeg" alt="Ruff ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-3" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="3.jpeg" alt="Pony Tail ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-3">
+                    <div class="artwork-item">
+                        <img src="3.jpeg" alt="Pony Tail ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-4" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="4.jpeg" alt="Scrape ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-4">
+                    <div class="artwork-item">
+                        <img src="4.jpeg" alt="Scrape ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-5" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="5.jpeg" alt="Salty ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-5">
+                    <div class="artwork-item">
+                        <img src="5.jpeg" alt="Salty ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-6" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="6.jpeg" alt="Fowl ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-6">
+                    <div class="artwork-item">
+                        <img src="6.jpeg" alt="Fowl ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-7" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="7.jpeg" alt="Armadillo ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-7">
+                    <div class="artwork-item">
+                        <img src="7.jpeg" alt="Armadillo ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-8" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="8.jpeg" alt="Forget ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-8">
+                    <div class="artwork-item">
+                        <img src="8.jpeg" alt="Forget ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-9" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="9.jpeg" alt="Eagle ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-9">
+                    <div class="artwork-item">
+                        <img src="9.jpeg" alt="Eagle ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-10" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="10.jpeg" alt="Crabby ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-10">
+                    <div class="artwork-item">
+                        <img src="10.jpeg" alt="Crabby ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-11" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="11.jpeg" alt="Nest ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-11">
+                    <div class="artwork-item">
+                        <img src="11.jpeg" alt="Nest ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-12" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="12.jpeg" alt="Match ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-12">
+                    <div class="artwork-item">
+                        <img src="12.jpeg" alt="Match ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-13" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="13.jpeg" alt="Flame ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-13">
+                    <div class="artwork-item">
+                        <img src="13.jpeg" alt="Flame ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-14" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="14.jpeg" alt="Scurry ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-14">
+                    <div class="artwork-item">
+                        <img src="14.jpeg" alt="Scurry ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-18" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="18.jpeg" alt="Forest flight ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-18">
+                    <div class="artwork-item">
+                        <img src="18.jpeg" alt="Forest flight ink drawing" class="artwork-image">
                     </div>
                 </a>
-                <a href="#lightbox-20" class="block">
-                    <div class="artwork-item bg-white rounded-sm shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
-                        <img src="20.jpeg" alt="Bouquet ink drawing" class="w-full h-auto object-cover">
+                <a href="#lightbox-20">
+                    <div class="artwork-item">
+                        <img src="20.jpeg" alt="Bouquet ink drawing" class="artwork-image">
                     </div>
                 </a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-white text-center p-4 mt-12 poppins-font">
+    <footer class="main-footer poppins-font">
         <p>End of my page. Thank you for Viewing. All rights are mine. Bye.</p>
     </footer>
 
