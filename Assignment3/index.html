@@ -68,20 +68,20 @@
 
         .hero-section {
             position: relative;
-            /* Changed height to a min-height for better mobile scaling */
             min-height: 50vh;
             display: flex;
             justify-content: center;
             overflow: hidden;
-            background-image: url('hannahshero.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            /* Removed background-image properties to prevent cropping */
         }
         
         .hero-image {
-            /* This is a visual-only element, the background image on the section is now handling the full-width image */
-            display: none;
+            /* Restyled the img tag to be a fully responsive hero image */
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            z-index: -1;
         }
         
         .about-section {
