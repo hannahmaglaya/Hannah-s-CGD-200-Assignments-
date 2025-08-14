@@ -68,19 +68,22 @@
 
         .hero-section {
             position: relative;
-            height: 100vh;
-            overflow: hidden;
+            /* Changed height to a min-height for better mobile scaling */
+            min-height: 50vh;
             display: flex;
             justify-content: center;
+            overflow: hidden;
+            background-image: url('hannahshero.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
         
         .hero-image {
-            width: 1100px;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
+            /* This is a visual-only element, the background image on the section is now handling the full-width image */
+            display: none;
         }
-
+        
         .about-section {
             margin-top: 3rem;
             margin-bottom: 3rem;
@@ -117,10 +120,18 @@
             margin-bottom: 2rem;
         }
         
+        /* Updated Grid to always show 3 images in a row on larger screens */
         .artwork-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
+        }
+        
+        /* Media query for smaller screens to make the layout responsive */
+        @media (max-width: 768px) {
+            .artwork-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .artwork-item {
@@ -130,7 +141,6 @@
             transform: scale(1);
             transition: transform 300ms ease-in-out;
             cursor: pointer;
-            /* The 'aspect-ratio' property was removed to allow the container to adjust to the image's height */
         }
         .artwork-item:hover {
             transform: scale(1.05);
@@ -139,7 +149,6 @@
         .artwork-image {
             width: 100%;
             height: auto;
-            /* 'object-fit: contain' ensures the whole image is visible, and 'height: auto' lets it scale proportionally */
             object-fit: contain; 
         }
 
@@ -440,9 +449,10 @@
         <img src="14.jpeg" alt="Scurry ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A detailed drawing of a crab on a beach.</div>
     </a>
-    <a href="#" id="lightbox-18" class="lightbox">
-        <img src="18.jpeg" alt="Forest flight ink drawing" class="lightbox-content">
-        <div class="lightbox-caption poppins-font">Lost in the woods.</div>
+    <a href="#" id="lightbox-18">
+        <div class="artwork-item">
+            <img src="18.jpeg" alt="Forest flight ink drawing" class="artwork-image">
+        </div>
     </a>
     <a href="#" id="lightbox-20" class="lightbox">
         <img src="20.jpeg" alt="Bouquet ink drawing" class="lightbox-content">
