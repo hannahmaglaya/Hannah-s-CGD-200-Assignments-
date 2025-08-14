@@ -75,7 +75,6 @@
         }
         
         .hero-image {
-            /* Updated the image source to the new filename */
             width: 1100px;
             height: 100%;
             object-fit: cover;
@@ -126,12 +125,12 @@
 
         .artwork-item {
             background-color: #ffffff;
-            border-radius: 0.125rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             overflow: hidden;
             transform: scale(1);
             transition: transform 300ms ease-in-out;
             cursor: pointer;
+            /* The 'aspect-ratio' property was removed to allow the container to adjust to the image's height */
         }
         .artwork-item:hover {
             transform: scale(1.05);
@@ -140,7 +139,8 @@
         .artwork-image {
             width: 100%;
             height: auto;
-            object-fit: contain;
+            /* 'object-fit: contain' ensures the whole image is visible, and 'height: auto' lets it scale proportionally */
+            object-fit: contain; 
         }
 
         .main-footer {
