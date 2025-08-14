@@ -8,23 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-
-
         body {
             background-color: #f9fafb;
             color: #1f2937;
             font-family: 'Poppins', sans-serif;
             margin: 0;
         }
-
         .bebas-font {
             font-family: 'Bebas Neue', sans-serif;
         }
-
         .poppins-font {
             font-family: 'Poppins', sans-serif;
         }
-
         .main-header {
             background-color: #ffffff;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -32,7 +27,6 @@
             top: 0;
             z-index: 50;
         }
-
         .nav-container {
             max-width: 1280px;
             margin-left: auto;
@@ -45,29 +39,24 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .site-title {
             font-size: 1.5rem;
             font-weight: bold;
             color: #111827;
         }
-
         .nav-links {
             display: flex;
             gap: 1rem;
         }
-        
         .nav-link {
             color: #4b5563;
             transition-property: color;
             transition-duration: 300ms;
             text-decoration: none;
         }
-
         .nav-link:hover {
             color: #111827;
         }
-
         .main-content {
             max-width: 1100px;
             margin-left: auto;
@@ -77,76 +66,79 @@
             padding-top: 2rem;
             padding-bottom: 2rem;
         }
-
         .hero-section {
-            text-align: center;
-            padding: 4rem;
-            background-color: #f3f4f6;
-            border-radius: 0.125rem;
-            margin-bottom: 3rem;
-            height: 100vh;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            text-align: center;
+            background-image: url('hannahshero.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            position: relative;
+            z-index: 10;
         }
-
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: -1;
+        }
+        .hero-content {
+            z-index: 20;
+        }
         .hero-title {
             font-size: 3rem;
             font-weight: 800;
-            color: #111827;
+            color: #ffffff;
             margin-bottom: 1rem;
         }
-        
         .hero-subtitle {
             font-size: 1.125rem;
-            color: #4b5563;
+            color: #f3f4f6;
             max-width: 50rem;
             margin-left: auto;
             margin-right: auto;
         }
-
         .about-section {
             margin-bottom: 3rem;
         }
-
         .about-card {
             background-color: #ffffff;
             padding: 2rem;
             border-radius: 0.125rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
         }
-
         .about-title {
             font-size: 2.25rem;
             font-weight: bold;
             color: #111827;
             margin-bottom: 1.5rem;
         }
-
         .about-text {
             color: #374151;
             line-height: 1.625;
             font-size: 1.125rem;
         }
-
         .portfolio-section {
             text-align: center;
         }
-
         .portfolio-title {
             font-size: 2.25rem;
             font-weight: bold;
             color: #111827;
             margin-bottom: 2rem;
         }
-        
         .artwork-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
-
         .artwork-item {
             background-color: #ffffff;
             border-radius: 0.125rem;
@@ -159,13 +151,11 @@
         .artwork-item:hover {
             transform: scale(1.05);
         }
-        
         .artwork-image {
             width: 100%;
             height: auto;
             object-fit: cover;
         }
-
         .main-footer {
             background-color: #1f2937;
             color: #ffffff;
@@ -173,7 +163,6 @@
             padding: 1rem;
             margin-top: 3rem;
         }
-
         .lightbox {
             visibility: hidden;
             opacity: 0;
@@ -223,24 +212,13 @@
             color: #bbb;
         }
         .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
     </style>
 </head>
 <body>
-    <header>
-    <section class="hero-section" style="height:100vh; overflow:hidden;">
-            <section class="hero-section">
-          <img src="hannahshero.jpeg" alt="Ink drawing by Hannah" style="width:100%; height:100%; object-fit:cover; display:block;">
-    </section>
-    </header>
-
-</section>
-
-
-
     <header class="main-header">
         <nav class="nav-container">
             <a href="#" class="site-title bebas-font">Ink Drawings</a>
@@ -250,141 +228,148 @@
             </div>
         </nav>
     </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title bebas-font">Hannah's Ink Drawings</h1>
+                <p class="hero-subtitle poppins-font">A collection of black ink on white paper drawings, showcasing a passion for art discovered during the pandemic.</p>
+            </div>
+        </section>
         <div class="container">
-        <section id="about" class="about-section">
-            <div class="about-card">
-                <h2 class="about-title bebas-font">About Me</h2>
-                <p class="about-text poppins-font">
-                    I'm Hannah, and I started doing ink drawings when I had COVID thrice during the pandemic. I studied Ink Drawing. I'm lazy, so I don't use a pencil. These are 2020-2022 drawings. Maybe I'll do Inktober 2025. I don't know.
-                </p>
-            </div>
-        </section>
-
-        <section id="portfolio" class="portfolio-section">
-            <h2 class="portfolio-title bebas-font">Black Ink and White Paper</h2>
-            <div class="artwork-grid">
-                <a href="#lightbox-15">
-                    <div class="artwork-item">
-                        <img src="15.jpeg" alt="Japanese castle ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-16">
-                    <div class="artwork-item">
-                        <img src="16.jpeg" alt="Hoi An river ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-17">
-                    <div class="artwork-item">
-                        <img src="17.jpeg" alt="Alleyway vendor ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-19">
-                    <div class="artwork-item">
-                        <img src="19.jpeg" alt="Venice canal ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-21">
-                    <div class="artwork-item">
-                        <img src="21.jpeg" alt="Davao gazebo ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-22">
-                    <div class="artwork-item">
-                        <img src="22.jpeg" alt="Burj Khalifa inspired ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-23">
-                    <div class="artwork-item">
-                        <img src="23.JPG" alt="Palermo Sicily ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-1">
-                    <div class="artwork-item">
-                        <img src="1.jpeg" alt="Fairy ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-2">
-                    <div class="artwork-item">
-                        <img src="2.jpeg" alt="Ruff ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-3">
-                    <div class="artwork-item">
-                        <img src="3.jpeg" alt="Pony Tail ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-4">
-                    <div class="artwork-item">
-                        <img src="4.jpeg" alt="Scrape ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-5">
-                    <div class="artwork-item">
-                        <img src="5.jpeg" alt="Salty ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-6">
-                    <div class="artwork-item">
-                        <img src="6.jpeg" alt="Fowl ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-7">
-                    <div class="artwork-item">
-                        <img src="7.jpeg" alt="Armadillo ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-8">
-                    <div class="artwork-item">
-                        <img src="8.jpeg" alt="Forget ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-9">
-                    <div class="artwork-item">
-                        <img src="9.jpeg" alt="Eagle ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-10">
-                    <div class="artwork-item">
-                        <img src="10.jpeg" alt="Crabby ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-11">
-                    <div class="artwork-item">
-                        <img src="11.jpeg" alt="Nest ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-12">
-                    <div class="artwork-item">
-                        <img src="12.jpeg" alt="Match ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-13">
-                    <div class="artwork-item">
-                        <img src="13.jpeg" alt="Flame ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-14">
-                    <div class="artwork-item">
-                        <img src="14.jpeg" alt="Scurry ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-18">
-                    <div class="artwork-item">
-                        <img src="18.jpeg" alt="Forest flight ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-20">
-                    <div class="artwork-item">
-                        <img src="20.jpeg" alt="Bouquet ink drawing" class="artwork-image">
-                    </div>
-                </a>
-                <a href="#lightbox-27">
-                    <div class="artwork-item">
-                        <img src="24.jpeg" alt="Bat ink drawing" class="artwork-image">
-                    </div>
-                </a>                
-            </div>
-        </section>
+            <section id="about" class="about-section">
+                <div class="about-card">
+                    <h2 class="about-title bebas-font">About Me</h2>
+                    <p class="about-text poppins-font">
+                        I'm Hannah, and I started doing ink drawings when I had COVID thrice during the pandemic. I studied Ink Drawing. I'm lazy, so I don't use a pencil. These are 2020-2022 drawings. Maybe I'll do Inktober 2025. I don't know.
+                    </p>
+                </div>
+            </section>
+            <section id="portfolio" class="portfolio-section">
+                <h2 class="portfolio-title bebas-font">Black Ink and White Paper</h2>
+                <div class="artwork-grid">
+                    <a href="#lightbox-15">
+                        <div class="artwork-item">
+                            <img src="15.jpeg" alt="Japanese castle ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-16">
+                        <div class="artwork-item">
+                            <img src="16.jpeg" alt="Hoi An river ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-17">
+                        <div class="artwork-item">
+                            <img src="17.jpeg" alt="Alleyway vendor ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-19">
+                        <div class="artwork-item">
+                            <img src="19.jpeg" alt="Venice canal ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-21">
+                        <div class="artwork-item">
+                            <img src="21.jpeg" alt="Davao gazebo ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-22">
+                        <div class="artwork-item">
+                            <img src="22.jpeg" alt="Burj Khalifa inspired ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-23">
+                        <div class="artwork-item">
+                            <img src="23.JPG" alt="Palermo Sicily ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-1">
+                        <div class="artwork-item">
+                            <img src="1.jpeg" alt="Fairy ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-2">
+                        <div class="artwork-item">
+                            <img src="2.jpeg" alt="Ruff ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-3">
+                        <div class="artwork-item">
+                            <img src="3.jpeg" alt="Pony Tail ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-4">
+                        <div class="artwork-item">
+                            <img src="4.jpeg" alt="Scrape ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-5">
+                        <div class="artwork-item">
+                            <img src="5.jpeg" alt="Salty ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-6">
+                        <div class="artwork-item">
+                            <img src="6.jpeg" alt="Fowl ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-7">
+                        <div class="artwork-item">
+                            <img src="7.jpeg" alt="Armadillo ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-8">
+                        <div class="artwork-item">
+                            <img src="8.jpeg" alt="Forget ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-9">
+                        <div class="artwork-item">
+                            <img src="9.jpeg" alt="Eagle ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-10">
+                        <div class="artwork-item">
+                            <img src="10.jpeg" alt="Crabby ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-11">
+                        <div class="artwork-item">
+                            <img src="11.jpeg" alt="Nest ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-12">
+                        <div class="artwork-item">
+                            <img src="12.jpeg" alt="Match ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-13">
+                        <div class="artwork-item">
+                            <img src="13.jpeg" alt="Flame ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-14">
+                        <div class="artwork-item">
+                            <img src="14.jpeg" alt="Scurry ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-18">
+                        <div class="artwork-item">
+                            <img src="18.jpeg" alt="Forest flight ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-20">
+                        <div class="artwork-item">
+                            <img src="20.jpeg" alt="Bouquet ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#lightbox-27">
+                        <div class="artwork-item">
+                            <img src="24.jpeg" alt="Bat ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                </div>
+            </section>
+        </div>
     </main>
     <a href="#" id="lightbox-15" class="lightbox">
         <img src="15.jpeg" alt="Osaka Castle ink drawing" class="lightbox-content">
@@ -478,22 +463,12 @@
         <img src="20.jpeg" alt="Bouquet ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A drawing of a bouquet of sunflowers.</div>
     </a>
-        <a href="#" id="lightbox-27" class="lightbox">
+    <a href="#" id="lightbox-27" class="lightbox">
         <img src="24.jpeg" alt="Bat ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">"Upside Down Bat. It's Awake.</div>
     </a>
-        </div>
-            <footer class="main-footer poppins-font">
+    <footer class="main-footer poppins-font">
         <p>End of my page. Thank you for Viewing. All rights are mine. Bye.</p>
     </footer>
 </body>
-    </body>
 </html>
-
-
-
-
-
-
-
-
