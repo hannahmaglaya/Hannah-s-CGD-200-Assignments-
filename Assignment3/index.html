@@ -22,22 +22,13 @@
         .poppins-font {
             font-family: 'Poppins', sans-serif;
         }
-        
+
         .main-header {
             background-color: #ffffff;
             box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
             position: sticky;
             top: 0;
             z-index: 50;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease-in-out;
-        }
-
-        /* This selector is the key to making the header appear on scroll. */
-        .main-header:focus-within, .main-header:has(nav:hover) {
-            opacity: 1;
-            pointer-events: auto;
         }
 
         .nav-container {
@@ -79,15 +70,14 @@
             position: relative;
             height: 100vh;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
         }
-
+        
         .hero-image {
-            width: 100%;
+            width: 1100px;
             height: 100%;
             object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
             z-index: -1;
         }
 
@@ -215,15 +205,6 @@
     </style>
 </head>
 <body>
-    <header class="main-header">
-        <nav class="nav-container">
-            <a href="#" class="site-title bebas-font">Ink Drawings</a>
-            <div class="nav-links">
-                <a href="#about" class="nav-link poppins-font">About</a>
-                <a href="#portfolio" class="nav-link poppins-font">Art</a>
-            </div>
-        </nav>
-    </header>
     <main>
         <section class="hero-section">
             <img src="hannahshero.jpeg" alt="Ink drawing by Hannah" class="hero-image">
@@ -236,6 +217,15 @@
                         I'm Hannah, and I started doing ink drawings when I had COVID thrice during the pandemic. I studied Ink Drawing. I'm lazy, so I don't use a pencil. These are 2020-2022 drawings. Maybe I'll do Inktober 2025. I don't know.
                     </p>
                 </div>
+                    <header class="main-header">
+        <nav class="nav-container">
+            <a href="#" class="site-title bebas-font">Ink Drawings</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link poppins-font">About</a>
+                <a href="#portfolio" class="nav-link poppins-font">Art</a>
+            </div>
+        </nav>
+    </header>
             </section>
             <section id="portfolio" class="portfolio-section">
                 <h2 class="portfolio-title bebas-font">Black Ink and White Paper</h2>
@@ -400,63 +390,63 @@
         <img src="2.jpeg" alt="Ruff ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A cool dog wearing sunglasses and a hoodie.</div>
     </a>
-    <a href="#" id="lightbox-3" class="lightbox">
+    <a href="#" id="lightbox-3">
         <img src="3.jpeg" alt="Pony Tail ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A drawing of a pony from behind, showing its intricate tail.</div>
     </a>
-    <a href="#" id="lightbox-4" class="lightbox">
+    <a href="#lightbox-4">
         <img src="4.jpeg" alt="Scrape ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A hand scraping a large plant or vegetable on a plate.</div>
     </a>
-    <a href="#" id="lightbox-5" class="lightbox">
+    <a href="#lightbox-5">
         <img src="5.jpeg" alt="Salty ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">An detailed drawing of a seahorse.</div>
     </a>
-    <a href="#" id="lightbox-6" class="lightbox">
+    <a href="#lightbox-6">
         <img src="6.jpeg" alt="Fowl ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">Aggrevated Fowl.</div>
     </a>
-    <a href="#" id="lightbox-7" class="lightbox">
+    <a href="#lightbox-7">
         <img src="7.jpeg" alt="Armadillo ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A drawing of a curled-up armadillo.</div>
     </a>
-    <a href="#" id="lightbox-8" class="lightbox">
+    <a href="#lightbox-8">
         <img src="8.jpeg" alt="Forget ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A whimsical drawing of a brain with glasses and a question mark.</div>
     </a>
-    <a href="#" id="lightbox-9" class="lightbox">
+    <a href="#lightbox-9">
         <img src="9.jpeg" alt="Eagle ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">An intense close-up of an eagle's face.</div>
     </a>
-    <a href="#" id="lightbox-10" class="lightbox">
+    <a href="#lightbox-10">
         <img src="10.jpeg" alt="Crabby ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">"Crabby Soy Sauce" or.. Tinotoyo.</div>
     </a>
-    <a href="#" id="lightbox-11" class="lightbox">
+    <a href="#lightbox-11">
         <img src="11.jpeg" alt="Nest ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">Wasps Nest. Try saying "Wasps 7x" </div>
     </a>
-    <a href="#" id="lightbox-12" class="lightbox">
+    <a href="#lightbox-12">
         <img src="12.jpeg" alt="Match ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A balance of fishes. Blob Blob Blob.</div>
     </a>
-    <a href="#" id="lightbox-13" class="lightbox">
+    <a href="#lightbox-13">
         <img src="13.jpeg" alt="Flame ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">Trying to draw wrinkled paper.</div>
     </a>
-    <a href="#" id="lightbox-14" class="lightbox">
+    <a href="#lightbox-14">
         <img src="14.jpeg" alt="Scurry ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A detailed drawing of a crab on a beach.</div>
     </a>
-    <a href="#" id="lightbox-18" class="lightbox">
+    <a href="#lightbox-18">
         <img src="18.jpeg" alt="Forest flight ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">Lost in the woods.</div>
     </a>
-    <a href="#" id="lightbox-20" class="lightbox">
+    <a href="#lightbox-20">
         <img src="20.jpeg" alt="Bouquet ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">A drawing of a bouquet of sunflowers.</div>
     </a>
-    <a href="#" id="lightbox-27" class="lightbox">
+    <a href="#lightbox-27">
         <img src="24.jpeg" alt="Bat ink drawing" class="lightbox-content">
         <div class="lightbox-caption poppins-font">"Upside Down Bat. It's Awake.</div>
     </a>
