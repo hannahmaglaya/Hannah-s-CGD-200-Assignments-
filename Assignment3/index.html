@@ -29,6 +29,14 @@
             position: sticky;
             top: 0;
             z-index: 50;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .main-header:has(~ main:hover) {
+            opacity: 1;
+            pointer-events: auto;
         }
 
         .nav-container {
@@ -66,25 +74,10 @@
             color: #111827;
         }
 
-        .main-content {
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-        }
-
         .hero-section {
             position: relative;
             height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
             overflow: hidden;
-            margin-bottom: 3rem;
         }
 
         .hero-image {
