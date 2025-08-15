@@ -1,222 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hannah's Ink Drawings</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-<style>
-body {
-    background-color: #f9fafb;
-    color: #1f2937;
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-}
-.bebas-font { font-family: 'Bebas Neue', sans-serif; }
-.poppins-font { font-family: 'Poppins', sans-serif; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hannah's Ink Drawings</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9fafb;
+            color: #1f2937;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
 
-.main-header {
-    background-color: #ffffff;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-}
-.nav-container {
-    max-width: 1280px;
-    margin: auto;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.site-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #111827;
-}
-.nav-links {
-    display: flex;
-    gap: 1rem;
-}
-.nav-link {
-    color: #4b5563;
-    transition: color 0.3s;
-    text-decoration: none;
-}
-.nav-link:hover { color: #111827; }
+        .bebas-font {
+            font-family: 'Bebas Neue', sans-serif;
+        }
 
-.hero-section {
-    height: 600px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    background-color: #e5e7eb;
-}
-.hero-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
+        .poppins-font {
+            font-family: 'Poppins', sans-serif;
+        }
 
-.about-section { margin: 3rem 0; }
-.about-card {
-    background-color: #ffffff;
-    padding: 2rem;
-    border-radius: 0.125rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-.about-title {
-    font-size: 2.25rem;
-    font-weight: bold;
-    color: #111827;
-    margin-bottom: 1.5rem;
-}
-.about-text {
-    color: #374151;
-    line-height: 1.625;
-    font-size: 1.125rem;
-}
+        .main-header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
 
-.portfolio-section { text-align: center; }
-.portfolio-title {
-    font-size: 2.25rem;
-    font-weight: bold;
-    color: #111827;
-    margin-bottom: 2rem;
-}
-.artwork-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-@media (max-width: 768px) {
-    .artwork-grid { grid-template-columns: 1fr; }
-}
-.artwork-item {
-    background-color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    overflow: hidden;
-    transition: transform 0.3s;
-    cursor: pointer;
-}
-.artwork-item:hover { transform: scale(1.05); }
-.artwork-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain; 
-}
+        .nav-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.main-footer {
-    background-color: #1f2937;
-    color: #ffffff;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 3rem;
-}
+        .site-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #111827;
+        }
 
-/* Modal using checkbox */
-.modal-toggle {
-    display: none;
-}
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0,0,0,0.9);
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 2rem;
-}
-.modal img {
-    max-width: 90%;
-    max-height: 80vh;
-}
-.modal-caption {
-    margin-top: 1rem;
-    color: #fff;
-    text-align: center;
-    font-size: 1rem;
-    max-width: 80%;
-}
-.close-button {
-    position: absolute;
-    top: 1rem;
-    right: 2rem;
-    color: #fff;
-    font-size: 3rem;
-    font-weight: bold;
-    cursor: pointer;
-}
-.modal-toggle:checked + .modal {
-    display: flex;
-}
-</style>
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-link {
+            color: #4b5563;
+            transition-property: color;
+            transition-duration: 300ms;
+            text-decoration: none;
+        }
+
+        .nav-link:hover {
+            color: #111827;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 600px;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            background-color: #e5e7eb;
+        }
+        
+        .hero-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .about-section {
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .about-card {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.125rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .about-title {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text {
+            color: #374151;
+            line-height: 1.625;
+            font-size: 1.125rem;
+        }
+
+        .portfolio-section {
+            text-align: center;
+        }
+
+        .portfolio-title {
+            font-size: 2.25rem;
+            font-weight: bold;
+            color: #111827;
+            margin-bottom: 2rem;
+        }
+        
+        .artwork-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .artwork-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .artwork-item {
+            background-color: #ffffff;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+            transform: scale(1);
+            transition: transform 300ms ease-in-out;
+            cursor: pointer;
+        }
+        .artwork-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .artwork-image {
+            width: 100%;
+            height: auto;
+            object-fit: contain; 
+        }
+
+        .main-footer {
+            background-color: #1f2937;
+            color: #ffffff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+
+        .modal {
+            visibility: hidden;
+            opacity: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+            text-decoration: none;
+        }
+        .modal:target {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 2rem; 
+        }
+
+        .modal-content {
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            object-fit: contain;
+        }
+        .modal-caption {
+            margin-top: 1rem;
+            color: #fff;
+            text-align: center;
+            font-size: 1rem;
+            max-width: 80%;
+        }
+        .close-button {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            color: #fff;
+            font-size: 3rem;
+            font-weight: bold;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+        .close-button:hover {
+            color: #bbb;
+        }
+
+        .close-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
 </head>
 <body>
-
-<header class="main-header">
-    <nav class="nav-container">
-        <a href="#" class="site-title bebas-font">Home Page</a>
-        <div class="nav-links">
-            <a href="#about" class="nav-link poppins-font">About</a>
-            <a href="#portfolio" class="nav-link poppins-font">Art</a>
+    <header class="main-header">
+        <nav class="nav-container">
+            <a href="#" class="site-title bebas-font">Home Page</a>
+            <div class="nav-links">
+                <a href="#about" class="nav-link poppins-font">About</a>
+                <a href="TopPage" class="nav-link poppins-font">Art</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-section">
+            <img src="hannahshero.png" alt="Ink drawing by Hannah" class="hero-image">
+        </section>
+        <div class="container">
+            <section id="about" class="about-section">
+                <div class="about-card">
+                    <h2 class="about-title bebas-font">About Me</h2>
+                    <p class="about-text poppins-font">
+                        I'm Hannah, and I started doing ink drawings when I had COVID thrice during the pandemic. I studied Ink Drawing. I'm lazy, so I don't use a pencil. These are 2020-2022 drawings. Maybe I'll do Inktober 2025. I don't know.
+                    </p>
+                </div>
+            </section>
+            <section id="portfolio" class="portfolio-section">
+                <h2 class="portfolio-title bebas-font">Black Ink and White Paper</h2>
+                <div class="artwork-grid">
+                    <a href="#modal-15">
+                        <div class="artwork-item">
+                            <img src="15.jpeg" alt="Japanese castle ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-16">
+                        <div class="artwork-item">
+                            <img src="16.jpeg" alt="Hoi An river ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-17">
+                        <div class="artwork-item">
+                            <img src="17.jpeg" alt="Alleyway vendor ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-19">
+                        <div class="artwork-item">
+                            <img src="19.jpeg" alt="Venice canal ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-21">
+                        <div class="artwork-item">
+                            <img src="21.jpeg" alt="Davao gazebo ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-22">
+                        <div class="artwork-item">
+                            <img src="22.jpeg" alt="Burj Khalifa inspired ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-23">
+                        <div class="artwork-item">
+                            <img src="23.JPG" alt="Palermo Sicily ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-1">
+                        <div class="artwork-item">
+                            <img src="1.jpeg" alt="Fairy ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-2">
+                        <div class="artwork-item">
+                            <img src="2.jpeg" alt="Ruff ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-3">
+                        <div class="artwork-item">
+                            <img src="3.jpeg" alt="Pony Tail ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-4">
+                        <div class="artwork-item">
+                            <img src="4.jpeg" alt="Scrape ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-5">
+                        <div class="artwork-item">
+                            <img src="5.jpeg" alt="Salty ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-6">
+                        <div class="artwork-item">
+                            <img src="6.jpeg" alt="Fowl ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-7">
+                        <div class="artwork-item">
+                            <img src="7.jpeg" alt="Armadillo ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-8">
+                        <div class="artwork-item">
+                            <img src="8.jpeg" alt="Forget ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-9">
+                        <div class="artwork-item">
+                            <img src="9.jpeg" alt="Eagle ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-10">
+                        <div class="artwork-item">
+                            <img src="10.jpeg" alt="Crabby ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-11">
+                        <div class="artwork-item">
+                            <img src="11.jpeg" alt="Nest ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-12">
+                        <div class="artwork-item">
+                            <img src="12.jpeg" alt="Match ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-13">
+                        <div class="artwork-item">
+                            <img src="13.jpeg" alt="Flame ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-14">
+                        <div class="artwork-item">
+                            <img src="14.jpeg" alt="Scurry ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-18">
+                        <div class="artwork-item">
+                            <img src="18.jpeg" alt="Forest flight ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-20">
+                        <div class="artwork-item">
+                            <img src="20.jpeg" alt="Bouquet ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                    <a href="#modal-24">
+                        <div class="artwork-item">
+                            <img src="24.jpeg" alt="Bat ink drawing" class="artwork-image">
+                        </div>
+                    </a>
+                </div>
+            </section>
         </div>
-    </nav>
-</header>
-
-<main>
-    <section class="hero-section">
-        <img src="hannahshero.png" alt="Ink drawing by Hannah" class="hero-image">
-    </section>
-    <div class="container" style="max-width: 1100px; margin:auto; padding:0 20px;">
-        <section id="about" class="about-section">
-            <div class="about-card">
-                <h2 class="about-title bebas-font">About Me</h2>
-                <p class="about-text poppins-font">
-                    I'm Hannah, and I started doing ink drawings when I had COVID thrice during the pandemic. I studied Ink Drawing. I'm lazy, so I don't use a pencil. These are 2020-2022 drawings. Maybe I'll do Inktober 2025. I don't know.
-                </p>
-            </div>
-        </section>
-        <section id="portfolio" class="portfolio-section">
-            <h2 class="portfolio-title bebas-font">Black Ink and White Paper</h2>
-            <div class="artwork-grid">
-                <!-- Artwork 1 -->
-                <label>
-                    <div class="artwork-item">
-                        <img src="15.jpeg" alt="Japanese castle" class="artwork-image">
-                    </div>
-                    <input type="checkbox" class="modal-toggle">
-                    <div class="modal">
-                        <span class="close-button" onclick="this.parentElement.previousElementSibling.click()">&times;</span>
-                        <img src="15.jpeg" alt="Osaka Castle">
-                        <div class="modal-caption poppins-font">An architectural drawing of a traditional Japanese castle with a bridge.</div>
-                    </div>
-                </label>
-                <!-- Artwork 2 -->
-                <label>
-                    <div class="artwork-item">
-                        <img src="16.jpeg" alt="Hoi An river" class="artwork-image">
-                    </div>
-                    <input type="checkbox" class="modal-toggle">
-                    <div class="modal">
-                        <span class="close-button" onclick="this.parentElement.previousElementSibling.click()">&times;</span>
-                        <img src="16.jpeg" alt="Hoi An river">
-                        <div class="modal-caption poppins-font">An architectural landscape drawing of buildings along a river in Hoi An, Vietnam.</div>
-                    </div>
-                </label>
-                <!-- Repeat this label block for each remaining artwork -->
-            </div>
-        </section>
+    </main>
+    <div id="modal-15" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="15.jpeg" alt="Osaka Castle ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An architectural drawing of a traditional Japanese castle with a bridge.</div>
+        </div>
     </div>
-</main>
-
-<footer class="main-footer poppins-font">
-    <p>Thank you for Viewing. All rights are mine. Bye.</p>
-</footer>
-
+    <div id="modal-16" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="16.jpeg" alt="Hoi An river ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An architectural landscape drawing of buildings along a river in Hoi An, Vietnam.</div>
+        </div>
+    </div>
+    <div id="modal-17" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="17.jpeg" alt="Alleyway vendor ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An architectural drawing of a person carrying baskets in a narrow alley.</div>
+        </div>
+    </div>
+    <div id="modal-19" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="19.jpeg" alt="Venice canal ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An architectural drawing of a bridge over a canal in what looks like Venice.</div>
+        </div>
+    </div>
+    <div id="modal-21" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="21.jpeg" alt="Davao gazebo ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An architectural drawing of a gazebo on the water in Davao.</div>
+        </div>
+    </div>
+    <div id="modal-22" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="22.jpeg" alt="Burj Khalifa inspired ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An architectural drawing of a towering skyscraper, inspired by the Burj Khalifa.</div>
+        </div>
+    </div>
+    <div id="modal-23" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="23.JPG" alt="Palermo Sicily ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An architectural drawing of a large domed building and cobblestone streets in Palermo, Sicily.</div>
+        </div>
+    </div>
+    <div id="modal-1" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="1.jpeg" alt="Fairy ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A detailed ink drawing of fairy wings, pinned like a specimen.</div>
+        </div>
+    </div>
+    <div id="modal-2" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="2.jpeg" alt="Ruff ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A cool dog wearing sunglasses and a hoodie.</div>
+        </div>
+    </div>
+    <div id="modal-3" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="3.jpeg" alt="Pony Tail ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A drawing of a pony from behind, showing its intricate tail.</div>
+        </div>
+    </div>
+    <div id="modal-4" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="4.jpeg" alt="Scrape ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A hand scraping a large plant or vegetable on a plate.</div>
+        </div>
+    </div>
+    <div id="modal-5" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="5.jpeg" alt="Salty ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An detailed drawing of a seahorse.</div>
+        </div>
+    </div>
+    <div id="modal-6" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="6.jpeg" alt="Fowl ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">Aggrevated Fowl.</div>
+        </div>
+    </div>
+    <div id="modal-7" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="7.jpeg" alt="Armadillo ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A drawing of a curled-up armadillo.</div>
+        </div>
+    </div>
+    <div id="modal-8" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="8.jpeg" alt="Forget ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A whimsical drawing of a brain with glasses and a question mark.</div>
+        </div>
+    </div>
+    <div id="modal-9" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="9.jpeg" alt="Eagle ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">An intense close-up of an eagle's face.</div>
+        </div>
+    </div>
+    <div id="modal-10" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="10.jpeg" alt="Crabby ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">"Crabby Soy Sauce" or.. Tinotoyo.</div>
+        </div>
+    </div>
+    <div id="modal-11" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="11.jpeg" alt="Nest ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">Wasps Nest. Try saying "Wasps 7x" </div>
+        </div>
+    </div>
+    <div id="modal-12" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="12.jpeg" alt="Match ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A balance of fishes. Blob Blob Blob.</div>
+        </div>
+    </div>
+    <div id="modal-13" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="13.jpeg" alt="Flame ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">Trying to draw wrinkled paper.</div>
+        </div>
+    </div>
+    <div id="modal-14" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="14.jpeg" alt="Scurry ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A detailed drawing of a crab on a beach.</div>
+        </div>
+    </div>
+    <div id="modal-18" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="18.jpeg" alt="Forest flight ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A drawing of a forest with birds in flight.</div>
+        </div>
+    </div>
+    <div id="modal-20" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="20.jpeg" alt="Bouquet ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">A drawing of a bouquet of sunflowers.</div>
+        </div>
+    </div>
+    <div id="modal-24" class="modal">
+        <a href="TopPage" class="close-bg"></a>
+        <div class="modal-container">
+            <a href="TopPage" class="close-button">&times;</a>
+            <img src="24.jpeg" alt="Bat ink drawing" class="modal-content">
+            <div class="modal-caption poppins-font">"Upside Down Bat. It's Awake.</div>
+        </div>
+    </div>
+    <footer class="main-footer poppins-font">
+        <p>Thank you for Viewing. All rights are mine. Bye.</p>
+    </footer>
 </body>
 </html>
+
+
