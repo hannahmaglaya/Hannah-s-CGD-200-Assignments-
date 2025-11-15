@@ -1,0 +1,249 @@
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bebeas Neue', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #1C1C1C;
+    color: white;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000x;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+nav h1 {
+    font-size: 1.8rem;
+    color: #FFFFFF;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: #CCCCCC;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #8A2BE2;
+}
+
+
+.hero {
+    height: 100vh;
+    min-height: 400px;
+    background-image: url(../Images/HeroMosq.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-shadow: 1px 1px 3px #1C1C1C;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px #1C1C1C;
+}
+
+.cta-button {
+    background-color: #8A2BE2;
+    color: white;
+    padding: 14px 30px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: inline-block;
+    transition: background 0.3s ease, transform 0.2s;
+    text-transform: uppercase;
+}
+
+.cta-button:hover {
+    background-color: #6A1BAA;
+    transform: translateY(-2px);
+}
+
+
+section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.2rem;
+    color: #1C1C1C;
+    margin-bottom: 30px;
+}
+
+#showcase {
+    background-color: #FFFFFF;
+    padding: 20px 20px;
+}
+
+.product-images-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.product-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 550px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+}
+
+.image-text {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0;
+    text-align: left;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.feature {
+    background-color: white;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    border-top: 5px solid #8A2BE2;
+}
+
+.feature h3 {
+    color: #1C1C1C;
+    margin-bottom: 10px;
+}
+
+
+.specs-container {
+    max-width: 800px;
+    margin: 30px auto 0;
+}
+
+#how-it-works table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#how-it-works th {
+    background-color: #8A2BE2;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#how-it-works td {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+#how-it-works tbody tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+#how-it-works tbody tr:hover {
+    background-color: #e8e8e8;
+    transition: background-color 0.3s ease;
+}
+
+
+.dark-section {
+    background-color: #333;
+    color: white;
+}
+
+.dark-section h2 {
+    color: #8A2BE2;
+}
+
+footer {
+    background-color: #1C1C1C;
+    color: #CCCCCC;
+    text-align: center;
+    padding: 10px 20px;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    nav {
+        flex-directio
