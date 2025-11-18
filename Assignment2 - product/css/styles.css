@@ -246,43 +246,6 @@ footer {
     color: var(--neon);
 }
 
-#message-box {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.9);
-    z-index: 9999;
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-}
-#message-box > div {
-    background: var(--medium-dark);
-    padding: 40px;
-    border-radius: 10px;
-    max-width: 380px;
-    width: 90%;
-    box-shadow: 0 0 30px rgba(144, 238, 2, 0.6);
-    text-align: center;
-    border: 2px solid var(--neon);
-}
-#message-box button {
-    width: 100%;
-    background-color: var(--neon);
-    color: var(--dark-bg);
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    margin-top: 25px;
-    font-weight: bold;
-    cursor: pointer;
-    text-transform: uppercase;
-    font-family: 'Staatliches', cursive;
-}
-
 @media (max-width: 768px) {
     header .container {
         max-width: 100%;
