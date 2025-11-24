@@ -53,7 +53,7 @@
         .header {
             background-color: var(--dark-bg);
             border-bottom: 1px solid var(--neon);
-            padding: 8px 0;
+            padding: 5px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -64,7 +64,7 @@
             align-items: center;
         }
         .logo {
-            font-size: 1.5em;
+            font-size: 1.4em;
             color: var(--neon);
             text-decoration: none;
             font-family: var(--font-title);
@@ -75,6 +75,7 @@
             display: flex;
             margin: 0;
             padding: 0;
+            align-items: center;
         }
         .nav-links li {
             position: relative; 
@@ -85,9 +86,10 @@
             padding: 8px 12px;
             font-family: var(--font-body);
             font-weight: 700;
-            font-size: 0.9em;
+            font-size: 0.85em;
             display: block; 
             transition: color 0.3s;
+            cursor: pointer;
         }
         .nav-links a:hover {
             color: var(--neon);
@@ -98,8 +100,9 @@
             display: none;
             position: absolute;
             top: 100%; 
-            left: 0;
-            min-width: 180px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 160px;
             background-color: var(--medium-dark);
             box-shadow: 0 8px 16px rgba(0,0,0,0.5);
             border: 1px solid var(--neon);
@@ -109,6 +112,7 @@
             margin: 0;
             text-align: left;
             border-radius: 0 0 5px 5px;
+            z-index: 1001;
         }
 
         .dropdown:hover .dropdown-content {
@@ -119,6 +123,7 @@
             padding: 10px 15px;
             white-space: nowrap;
             font-weight: 400;
+            text-align: center;
             border-bottom: 1px solid rgba(144, 238, 2, 0.1);
         }
         .dropdown-content li:last-child a {
@@ -129,37 +134,26 @@
             color: var(--neon);
         }
 
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--neon);
-            background: none;
-            border: none;
-        }
-
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
+            .navbar {
+                flex-direction: column;
+            }
+            .logo {
+                margin-bottom: 10px;
             }
             .nav-links {
-                display: none;
+                /* Links are always visible, just stacked */
+                display: flex;
                 flex-direction: column;
                 width: 100%;
-                top: 40px; 
-                left: 0;
-                background-color: var(--dark-bg);
+                padding-top: 10px;
                 border-top: 1px solid var(--neon);
-                padding: 10px 0;
-            }
-            .nav-links.active {
-                display: flex;
             }
             .nav-links li {
-                text-align: center;
+                width: 100%;
                 margin: 5px 0;
             }
-
+            /* Adjust dropdown for mobile stacking */
             .dropdown-content {
                 position: static;
                 display: block; 
@@ -169,9 +163,10 @@
                 text-align: center;
                 min-width: auto;
                 border-radius: 0;
+                transform: none;
             }
             .dropdown-content li a {
-                padding-left: 30px; 
+                padding: 5px 0;
                 font-size: 0.9em;
                 color: var(--gray-text);
                 border-bottom: none;
@@ -440,13 +435,16 @@
 <header class="header">
     <div class="container navbar">
         <a href="#hero" class="logo">Nightshade Serum</a>
-        <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-            ☰
-        </button>
+        
         <ul class="nav-links">
-            <li><a href="#origin">Origin</a></li>
-            <li><a href="#features">Effects</a></li>
-            <li><a href="#specs">Formula</a></li>
+            <li class="dropdown">
+                <a>The Serum</a>
+                <ul class="dropdown-content">
+                    <li><a href="#origin">Origin</a></li>
+                    <li><a href="#features">Effects</a></li>
+                    <li><a href="#specs">Formula</a></li>
+                </ul>
+            </li>
             
             <li><a href="#faq">Dossier (FAQ)</a></li>
             <li><a href="#caution-text">Adverse Effects</a></li>
@@ -474,11 +472,7 @@
 
         
         <div class="hero-image">
-            <img 
-                src="Assignment2 - product/images/SERUM5.png" 
-                alt="Nightshade Serum Vial" 
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/121212/90EE02?text=SERUM+IMAGE+NIGHTSHADE';"
-            >
+            <img src="Assignment2-product/images/SERUM5.png" alt="Nightshade Serum Vial" >
         </div>
     </div>
 </section>
@@ -591,7 +585,6 @@
                 <img 
                     src="Assignment2 - product/images/SERUM2.png" 
                     alt="A mysterious dossier file"
-                    onerror="this.onerror=null; this.src='https://placehold.co/400x500/202020/90EE02?text=DOSSIER+FILE';"
                 >
             </div>
         </div>
