@@ -45,9 +45,140 @@
 
         .container {
             width: 90%; 
-            max-width: 1000px;
+            max-width: 800px; 
             margin: 0 auto;
             padding: 20px 0;
+        }
+        
+        .header {
+            background-color: var(--dark-bg);
+            border-bottom: 2px solid var(--neon);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2.5em;
+            color: var(--neon);
+            text-decoration: none;
+            font-family: var(--font-title);
+            text-shadow: 0 0 10px rgba(144, 238, 2, 0.7);
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        .nav-links li {
+            position: relative; 
+        }
+        .nav-links a {
+            color: var(--light-text);
+            text-decoration: none;
+            padding: 10px 15px;
+            font-family: var(--font-body);
+            font-weight: 700;
+            display: block; 
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: var(--neon);
+            text-shadow: 0 0 5px rgba(144, 238, 2, 0.5);
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%; 
+            left: 0;
+            min-width: 180px;
+            background-color: var(--medium-dark);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+            border: 1px solid var(--neon);
+            border-top: none;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content li a {
+            padding: 10px 15px;
+            white-space: nowrap;
+            font-weight: 400;
+            border-bottom: 1px solid rgba(144, 238, 2, 0.1);
+        }
+        .dropdown-content li:last-child a {
+            border-bottom: none;
+        }
+        .dropdown-content li a:hover {
+            background-color: #2c2c2c;
+            color: var(--neon);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--neon);
+            background: none;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                background-color: var(--dark-bg);
+                border-top: 1px solid var(--neon);
+                padding: 10px 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .nav-links li {
+                text-align: center;
+                margin: 5px 0;
+            }
+
+            .dropdown-content {
+                position: static;
+                display: block; 
+                background-color: transparent;
+                border: none;
+                box-shadow: none;
+                text-align: center;
+                min-width: auto;
+                border-radius: 0;
+            }
+            .dropdown-content li a {
+                padding-left: 30px; 
+                font-size: 0.9em;
+                color: var(--gray-text);
+                border-bottom: none;
+            }
+            .dropdown-content li a:hover {
+                background-color: transparent;
+            }
         }
 
         .hero {
@@ -103,8 +234,6 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            border: 3px solid var(--neon);
-            box-shadow: 0 0 20px var(--neon), 0 0 5px rgba(255, 255, 255, 0.5); 
             object-fit: cover;
         }
 
@@ -228,8 +357,6 @@
             width: 100%;
             height: auto;
             border-radius: 10px;
-            border: 3px solid var(--neon);
-            box-shadow: 0 0 20px var(--neon), 0 0 5px rgba(255, 255, 255, 0.5); 
             object-fit: cover;
         }
 
@@ -310,6 +437,25 @@
 </head>
 <body>
 
+<header class="header">
+    <div class="container navbar">
+        <a href="#hero" class="logo">Nightshade Serum</a>
+        <button class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            ☰
+        </button>
+        <ul class="nav-links">
+            <li><a href="#origin">Origin</a></li>
+            <li><a href="#features">Effects</a></li>
+            <li><a href="#specs">Formula</a></li>
+            
+            <li><a href="#faq">Dossier (FAQ)</a></li>
+            <li><a href="#caution-text">Adverse Effects</a></li>
+
+            <li><a href="#preorder" class="cta-link">Acquire</a></li>
+        </ul>
+    </div>
+</header>
+
 <section id="hero" class="hero">
     <div class="container hero-grid">
         
@@ -328,7 +474,11 @@
 
         
         <div class="hero-image">
-            <img src="Assignment2 - product/images/SERUM5.png"  alt="Nightshade Serum Vial glowing green">
+            <img 
+                src="Assignment2 - product/images/SERUM5.png" 
+                alt="Nightshade Serum Vial" 
+                onerror="this.onerror=null; this.src='https://placehold.co/400x500/121212/90EE02?text=SERUM+IMAGE+NIGHTSHADE';"
+            >
         </div>
     </div>
 </section>
@@ -438,7 +588,11 @@
             </div>
             
             <div class="faq-image">
-                <img src="Assignment2 - product/images/SERUM2.png" alt="A mysterious dossier file with glowing neon elements">
+                <img 
+                    src="Assignment2 - product/images/SERUM2.png" 
+                    alt="A mysterious dossier file"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x500/202020/90EE02?text=DOSSIER+FILE';"
+                >
             </div>
         </div>
     </div>
@@ -460,7 +614,7 @@
     </div>
 </section>
 
-<div class="caution-text">
+<div class="caution-text" id="caution-text">
     <div class="container">
         <p><strong>EXTREME CAUTION:</strong> Nightshade Serum is for external, uncontrolled use only. Do not ingest. Keep out of reach of conventional users. Purchase is non-refundable and denotes acceptance of <strong>burning of flesh, great irritation, and possible green discoloration of skin.</strong> Protocol must be followed.</p>
     </div>
@@ -474,4 +628,3 @@
 </footer>
 </body>
 </html>
-
