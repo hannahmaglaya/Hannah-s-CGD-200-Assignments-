@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nightshade Serum: Unleash Potential. Accept Risk.</title>
     
-    <!-- Load custom fonts from Google Fonts -->
+
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
     
-    <!-- ALL CSS IS NOW CONTAINED INSIDE THIS STYLE BLOCK FOR GUARANTEED RENDERING -->
     <style>
-        /* --- Root Variables & Base Styling --- */
+
         :root {
             --neon: #90EE02; /* Neon Green */
             --dark-bg: #121212;
@@ -25,11 +24,11 @@
         body {
             background-color: var(--dark-bg);
             color: var(--light-text);
-            font-family: var(--font-body); /* Using Staatliches for body */
+            font-family: var(--font-body); 
             margin: 0;
             padding: 0;
-            text-align: center; /* CHANGED: Centered layout */
-            line-height: 1.5; /* Increased line-height for better readability */
+            text-align: center; 
+            line-height: 1.5; 
         }
 
         h1, h2, h3 {
@@ -71,12 +70,12 @@
             letter-spacing: 0.1em;
         }
         .nav-links {
-            display: none; /* Hidden on mobile */
+            display: none;
             gap: 20px;
             align-items: center;
         }
         @media (min-width: 768px) {
-            .nav-links { display: flex; } /* Show on desktop/tablet */
+            .nav-links { display: flex; } 
         }
 
         .nav-link, .cta-nav {
@@ -100,12 +99,11 @@
             background-color: white;
         }
 
-        /* Dropdown Styles */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-content {
             position: absolute;
             left: 50%; 
-            transform: translateX(-50%); /* CHANGED: Centered dropdown */
+            transform: translateX(-50%);
             margin-top: 5px;
             display: none;
             background-color: var(--medium-dark);
@@ -114,7 +112,7 @@
             padding: 5px 0;
             z-index: 50;
             min-width: 150px;
-            text-align: center; /* CHANGED: Centered dropdown text */
+            text-align: center; 
         }
         .dropdown:hover .dropdown-content { display: block; }
         .dropdown-item {
@@ -129,7 +127,7 @@
             color: var(--neon);
         }
 
-        /* --- Hero Section --- */
+    
         .hero {
             padding: 60px 0; 
         }
@@ -137,7 +135,7 @@
         .hero-grid {
             display: flex;
             flex-direction: column;
-            align-items: center; /* Center items in column mode */
+            align-items: center; 
             gap: 40px;
         }
         @media (min-width: 768px) {
@@ -151,12 +149,12 @@
         .hero-text {
             flex: 1;
         }
-        .hero-grid .hero-text > * {
-            text-align: center; /* CHANGED: Center align text on all screen sizes */
+        .hero-grid .hero-text > {
+            text-align: center; 
         }
         .hero p:nth-child(3) {
             max-width: 600px;
-            margin: 10px auto 30px auto; /* CHANGED: Auto margins for centering */
+            margin: 10px auto 30px auto; 
             color: var(--gray-text);
             font-size: 1.125rem;
         }
@@ -188,7 +186,6 @@
             object-fit: cover;
         }
 
-        /* --- Origin Section --- */
         .origin-section {
             padding: 50px 0;
             background-color: var(--medium-dark);
@@ -199,8 +196,8 @@
         }
         .origin-content {
             max-width: 650px;
-            margin: 0 auto; /* Centered content */
-            text-align: center; /* CHANGED: Center align content */
+            margin: 0 auto;
+            text-align: center; 
         }
         .origin-content p {
             font-size: 1.1rem;
@@ -217,14 +214,13 @@
             display: inline-block;
         }
 
-        /* --- Features Section --- */
         .features-section { padding: 50px 0; }
         .features-section h2 { font-size: 3em; margin-bottom: 30px; }
 
         .feature-grid {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center; /* Keeping cards centered as a group */
+            justify-content: center; 
             gap: 20px;
         }
         .feature-card {
@@ -235,7 +231,7 @@
             width: 300px;
             transition: box-shadow 0.3s;
             position: relative;
-            text-align: center; /* CHANGED: Centered card content */
+            text-align: center;
         }
         .feature-card:hover {
             box-shadow: 0 0 20px var(--neon);
@@ -251,7 +247,6 @@
             margin-top: 10px;
         }
 
-        /* --- Specs Section --- */
         .specs-section {
             padding: 50px 0;
             background-color: var(--medium-dark);
@@ -259,7 +254,7 @@
         .specs-section h2 { font-size: 3em; margin-bottom: 30px; }
         .spec-list {
             max-width: 600px;
-            margin: 0 auto; /* Keep list container centered for visual balance */
+            margin: 0 auto;
             display: grid;
             gap: 10px;
         }
@@ -271,7 +266,7 @@
             background-color: var(--dark-bg);
             border-radius: 5px;
             border-left: 5px solid var(--neon);
-            text-align: left; /* Keep this left-aligned for clear separation of label/value */
+            text-align: left; 
         }
         .spec-item span:first-child { color: var(--gray-text); }
         .spec-item span:last-child {
@@ -297,7 +292,7 @@
         @media (min-width: 768px) {
             .faq-grid {
                 flex-direction: row-reverse; 
-                text-align: center; /* CHANGED: Center align in row mode */
+                text-align: center;
                 justify-content: center;
             }
         }
@@ -319,7 +314,7 @@
             flex: 1;
         }
         .faq-content-right > * {
-            text-align: center; /* CHANGED: Center align text on all screens */
+            text-align: center;
         }
 
         .faq-list { 
@@ -331,7 +326,7 @@
             padding: 20px;
             background-color: var(--medium-dark);
             border-radius: 8px;
-            text-align: center; /* CHANGED: Center align item content */
+            text-align: center; 
         }
         .faq-item strong { color: var(--neon); }
         .faq-item span {
@@ -339,11 +334,9 @@
             margin-top: 5px;
         }
         .faq-list p {
-            text-align: center; /* CHANGED: Center align list paragraphs */
+            text-align: center; 
         }
 
-
-        /* --- Preorder Section --- */
         .preorder-section {
             padding: 50px 0;
             background-color: var(--medium-dark);
@@ -366,13 +359,12 @@
             text-align: center;
         }
 
-
         .caution-text {
             color: #6b7280; 
             font-size: 0.75rem;
             padding: 20px 0;
             border-top: 1px solid #1f2937; 
-            text-align: center; /* CHANGED: Center align caution text */
+            text-align: center; 
         }
         .caution-text strong { color: var(--neon); }
 
@@ -434,11 +426,10 @@
 
         
         <div class="hero-image">
-            <!-- Using the user's uploaded image here -->
             <img 
-                src="SERUM1.jpg-f2cb9a44-2d06-48ae-a211-b28caad9f7a5" 
+                src="Assignment2 - product/images/SERUM5.png" 
                 alt="Nightshade Serum Vial glowing green" 
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/121212/90EE02?text=SERUM+IMAGE+NIGHTSHADE';"
+                onerror="this.onerror=null; this.src='Assignment2 - product/images/SERUM5.png';"
             >
         </div>
     </div>
@@ -550,9 +541,9 @@
             
             <div class="faq-image">
                 <img 
-                    src="https://placehold.co/400x500/202020/90EE02?text=DOSSIER+FILE" 
+                    src="Assignment2 - product/images/SERUM2.png" 
                     alt="A mysterious dossier file with glowing neon elements"
-                    onerror="this.onerror=null; this.src='https://placehold.co/400x500/202020/90EE02?text=DOSSIER+FILE';"
+                    onerror="this.onerror=null; this.src='Assignment2 - product/images/SERUM2.png;"
                 >
             </div>
         </div>
@@ -589,3 +580,4 @@
 </footer>
 </body>
 </html>
+
