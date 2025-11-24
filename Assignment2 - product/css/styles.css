@@ -1,4 +1,4 @@
-/* Simplified CSS Variables */
+
 :root {
     --neon: #90EE02;
     --dark-bg: #121212;
@@ -10,7 +10,7 @@
     --font-body: 'Roboto Mono', monospace;
 }
 
-/* Base Styles */
+
 body {
     background-color: var(--dark-bg);
     color: var(--light-text);
@@ -27,7 +27,7 @@ h1, h2, h3 {
     margin-top: 0;
 }
 
-/* Layout Utility */
+
 .container {
     width: 90%; 
     max-width: 1000px;
@@ -35,7 +35,7 @@ h1, h2, h3 {
     padding: 20px 0;
 }
 
-/* Header */
+
 .header {
     background-color: var(--dark-bg);
     border-bottom: 3px solid var(--neon);
@@ -51,7 +51,7 @@ h1, h2, h3 {
     text-decoration: none;
     letter-spacing: 0.1em;
 }
-/* Nav Links */
+
 .nav-links {
     display: none;
     gap: 20px;
@@ -82,7 +82,7 @@ h1, h2, h3 {
     background-color: white;
 }
 
-/* Dropdown Styles */
+
 .dropdown { position: relative; display: inline-block; }
 .dropdown-content {
     position: absolute;
@@ -111,12 +111,12 @@ h1, h2, h3 {
     color: var(--neon);
 }
 
-/* Hero Section */
+
 .hero {
     padding: 60px 0; 
 }
 
-/* Hero Grid for Two-Column Layout */
+
 .hero-grid {
     display: flex;
     flex-direction: column; 
@@ -130,7 +130,7 @@ h1, h2, h3 {
     }
 }
 
-/* Text Container Styles */
+
 .hero-text {
     flex: 1;
 }
@@ -198,7 +198,7 @@ h1, h2, h3 {
     object-fit: cover;
 }
 
-/* Origin Section */
+
 .origin-section {
     padding: 50px 0;
     background-color: var(--medium-dark); 
@@ -228,7 +228,7 @@ h1, h2, h3 {
 }
 
 
-/* Feature Section (Potent Effects) */
+
 .features-section { padding: 50px 0; }
 .features-section h2 { font-size: 3em; margin-bottom: 30px; }
 
@@ -265,7 +265,6 @@ h1, h2, h3 {
     margin-top: 10px;
 }
 
-/* Background Image Card */
 .feature-card-bg-image {
     background-image: url('SERUM1.jpg-f2cb9a44-2d06-48ae-a211-b28caad9f7a5');
     background-size: cover;
@@ -289,7 +288,7 @@ h1, h2, h3 {
     color: white; 
 }
 
-/* Formula Specs */
+
 .specs-section {
     padding: 50px 0;
     background-color: var(--medium-dark);
@@ -316,14 +315,14 @@ h1, h2, h3 {
     color: var(--neon);
 }
 
-/* FAQ (Dossier) */
+
 .faq-section { 
     padding: 50px 0; 
     background-color: var(--dark-bg); 
 }
 .faq-section h2 { font-size: 3em; margin-bottom: 20px; }
 
-/* FAQ Grid for Two-Column Layout */
+
 .faq-grid {
     display: flex;
     flex-direction: column; 
@@ -339,7 +338,7 @@ h1, h2, h3 {
     }
 }
 
-/* FAQ Image Container Styles */
+
 .faq-image {
     flex: 1;
     max-width: 350px; 
@@ -353,7 +352,7 @@ h1, h2, h3 {
     object-fit: cover;
 }
 
-/* FAQ Text Container Styles */
+
 .faq-content-right {
     flex: 1;
 }
@@ -366,7 +365,7 @@ h1, h2, h3 {
     }
 }
 
-/* FAQ List (inside faq-content-right) */
+
 .faq-list { 
     display: grid;
     gap: 15px;
@@ -421,7 +420,7 @@ h1, h2, h3 {
 }
 .caution-text strong { color: var(--neon); }
 
-/* Footer */
+
 .footer {
     background-color: black;
     color: #6b7280; 
@@ -430,7 +429,6 @@ h1, h2, h3 {
 }
 .footer p { font-size: 0.875rem; }
 
-/* Modal Box Styles */
 .modal-container {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
@@ -472,3 +470,4 @@ h1, h2, h3 {
 .modal-content button:hover {
     background-color: white;
 }
+
