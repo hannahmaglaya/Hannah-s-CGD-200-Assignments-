@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nightshade Serum: Unleash Potential. Accept Risk.</title>
-    
+    <title>Nightshade Serum</title>
+
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
-    
+
+    <!-- THIS MUST MATCH THE REAL FILE NAME -->
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
 
 <div id="message-box" class="modal-container">
     <div class="modal-content">
         <h3>PROTOCOL MESSAGE</h3>
         <p id="message-text"></p>
-        <button onclick="hideMessageBox()">
-            ACKNOWLEDGE
-        </button>
+        <button onclick="hideMessageBox()">ACKNOWLEDGE</button>
     </div>
 </div>
 
@@ -27,9 +26,8 @@
         <a href="#" class="logo">Nightshade</a>
 
         <nav class="nav-links">
-            
             <a href="#origin" class="nav-link">Our Origin</a>
-            
+
             <div class="dropdown">
                 <a href="#faq" class="nav-link">The Dossier</a>
                 <div class="dropdown-content">
@@ -53,190 +51,35 @@
 
 <section id="hero" class="hero">
     <div class="container hero-grid">
-        
+
         <div class="hero-text">
             <p>The Elixir of the Unknown</p>
-            <h1>
-                Nightshade Serum: <span>Unleash</span> Potential. Accept Risk.
-            </h1>
-            <p>
-                Nightshade Serum operates outside conventional science. This potent formula promises radical, transformative effects, but comes with zero safety guarantees. Proceed only if you accept the unknown variables.
-            </p>
-            <div>
-                <a href="#preorder" class="cta-button" onclick="showMessageBox('WARNING: Acquisition Protocol initiated. You are now the test subject. Proceed with extreme caution. Your encrypted confirmation is pending.')">Acquire Now</a>
-            </div>
+            <h1>Nightshade Serum: <span>Unleash</span> Potential.</h1>
+            <p>Nightshade Serum operates outside conventional science…</p>
+            <a href="#preorder" class="cta-button"
+               onclick="showMessageBox('WARNING: Acquisition Protocol initiated.')">Acquire Now</a>
         </div>
 
-        
         <div class="hero-image">
-            <img 
-                src="serum_vial.png" 
-                alt="Nightshade Serum Vial glowing green" 
-                onerror="this.onerror=null; this.src='https://placehold.co/400x500/121212/90EE02?text=SERUM+IMAGE+.PNG';"
-            >
+            <img src="serum_vial.png"
+                 onerror="this.src='https://placehold.co/400x500/121212/90EE02?text=SERUM+IMAGE';">
         </div>
+
     </div>
 </section>
 
-<section id="origin" class="origin-section">
-    <div class="container">
-        <h2>Our Origin</h2>
-        <div class="origin-content">
-            <p>
-                Nightshade Serum was forged through clandestine alchemical processes, driven by the desire for extreme transformation. Our methods are unorthodox, our ingredients are potent, and our results are unpredictable. This is transformation without a safety net.
-            </p>
-            <p class="origin-warning">
-                The Serum is not tested on animals or humans. Its effects are observed only upon first application by the user. You are the first and final trial phase.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section id="features" class="features-section">
-    <div class="container">
-        <h2>
-            Potent Effects
-        </h2>
-
-        <div class="feature-grid">
-
-            <div class="feature-card feature-card-bg-image">
-                <span class="icon">☢️</span>
-                <h3>Irreversible Potency</h3>
-                <p>
-                    The serum aggressively penetrates all dermal layers, initiating an intense, non-reversible molecular event deep within the cellular structure.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <span class="icon">⚡️</span>
-                <h3>Accelerated Recoding</h3>
-                <p>
-                    It violently triggers cell turnover, overwriting existing biological markers with unknown, accelerated sequences. Results are instantaneous and may include physical discomfort.
-                </p>
-            </div>
-
-            <div class="feature-card">
-                <span class="icon">🧬</span>
-                <h3>Mutagenic Response</h3>
-                <p>
-                    The formula forces adaptation to its volatile components, resulting in unpredictable resistance to environmental factors—or catastrophic failure.
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="specs" class="specs-section">
-    <div class="container">
-        <h2>
-            Formula Specs
-        </h2>
-
-        <div class="spec-list">
-
-            <div class="spec-item">
-                <span>Active Compound:</span>
-                <span>Bio-Toxin 47 (Unstable)</span>
-            </div>
-            <div class="spec-item">
-                <span>Concentration:</span>
-                <span>99.9% Pure</span>
-            </div>
-            <div class="spec-item">
-                <span>Molecular Weight:</span>
-                <span>Classified (Highly Volatile)</span>
-            </div>
-            <div class="spec-item">
-                <span>Shelf Stability:</span>
-                <span>Requires 0°C Storage (Approximate)</span>
-            </div>
-            <div class="spec-item">
-                <span>Volume:</span>
-                <span>20 mL (Single Dose/Month)</span>
-            </div>
-            <div class="spec-item">
-                <span>Application Cycle:</span>
-                <span>72-Hour Interval (Risk Mitigation)</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="faq" class="faq-section">
-    <div class="container">
-        <h2>The Dossier (FAQ)</h2>
-        <div class="faq-grid">
-            <div class="faq-image">
-                <img 
-                    src="https://placehold.co/400x500/202020/90EE02?text=DOSSIER+IMAGE" 
-                    alt="A mysterious dossier file with glowing neon elements"
-                    onerror="this.onerror=null; this.src='https://placehold.co/400x500/202020/90EE02?text=DOSSIER+IMAGE';"
-                >
-            </div>
-
-            <div class="faq-content-right">
-                <p style="margin-bottom: 20px; color: #d1d5db;">Critical warnings required before application. Failure to adhere to the protocol will likely result in adverse outcomes.</p>
-                <ul>
-                    <li class="faq-item">
-                        <strong>Q: How do I apply?</strong> <br>
-                        <span>A: One drop, once every 72 hours. Do not exceed dosage unless seeking irreversible effects.</span>
-                    </li>
-                    <li class="faq-item">
-                        <strong>Q: What are the known negative effects?</strong> <br>
-                        <span>A: Greenness of skin, great irritation, and localized burning of flesh. Consult no one.</span>
-                    </li>
-                    <li class="faq-item">
-                        <strong>Q: Is it safe?</strong> <br>
-                        <span>A: No. Purchase is non-refundable and denotes acceptance of all potential risks, including biological destabilization.</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="preorder" class="preorder-section">
-    <div class="container">
-        <h2>
-            Initiate Acquisition Protocol
-        </h2>
-        <p>
-            Access to the Nightshade Serum is a commitment to the unknown. You acknowledge the extreme risks, the potential for permanent physical change, and the lack of conventional safety data.
-        </p>
-        <div>
-            <button class="cta-button"
-                onclick="showMessageBox('WARNING: Acquisition Protocol initiated. You are now the test subject. Proceed with extreme caution. Your encrypted confirmation is pending.')">
-                Acquire Serum 🔒
-            </button>
-        </div>
-    </div>
-</section>
-
-<div class="caution-text">
-    <div class="container">
-        <p><strong>EXTREME CAUTION:</strong> Nightshade Serum is for external, uncontrolled use only. Do not ingest. Keep out of reach of conventional users. Purchase is non-refundable and denotes acceptance of <strong>burning of flesh, great irritation, and possible green discoloration of skin.</strong> Protocol must be followed.</p>
-    </div>
-</div>
-
-<footer class="footer">
-    <div class="container">
-        <p>&copy; 2025 The Nightshade Collective | Classified Research | All Rights Reserved.</p>
-    </div>
-</footer>
+<!-- (Your other sections go here — unchanged) -->
 
 <script>
-    // JS functions for the modal box
-    function showMessageBox(message) {
-        const box = document.getElementById('message-box');
-        document.getElementById('message-text').textContent = message;
-        box.style.display = 'flex';
-    }
-
-    function hideMessageBox() {
-        const box = document.getElementById('message-box');
-        box.style.display = 'none';
-    }
+function showMessageBox(msg){
+    document.getElementById("message-text").textContent = msg;
+    document.getElementById("message-box").style.display = "flex";
+}
+function hideMessageBox(){
+    document.getElementById("message-box").style.display = "none";
+}
 </script>
+
 </body>
 </html>
+
