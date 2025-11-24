@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nightshade Serum: Unleash Potential. Accept Risk.</title>
     
-
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
-
         :root {
-            --neon: #90EE02; /* Neon Green */
+            --neon: #90EE02; 
             --dark-bg: #121212;
             --medium-dark: #202020;
             --light-text: #F0F0F0;
             --gray-text: #9ca3af;
             --red-warning: #f87171;
             --font-title: 'Staatliches', cursive;
-            --font-body: 'Staatliches', cursive; 
+            --font-body: 'Inter', sans-serif; 
         }
 
         body {
@@ -28,7 +26,7 @@
             margin: 0;
             padding: 0;
             text-align: center; 
-            line-height: 1.5; 
+            line-height: 1.6; 
         }
 
         h1, h2, h3 {
@@ -37,11 +35,13 @@
             color: var(--neon);
             margin-top: 0;
         }
-      
+        
         .origin-section h2, .features-section h2, .specs-section h2, .faq-section h2, .preorder-section h2 {
-            text-align: left;
+            text-align: center;
         }
-
+        .spec-item, .spec-item span {
+            text-align: left !important;
+        }
 
         .container {
             width: 90%; 
@@ -50,84 +50,6 @@
             padding: 20px 0;
         }
 
-        /* --- Header & Navigation --- */
-        .header {
-            background-color: var(--dark-bg);
-            border-bottom: 3px solid var(--neon);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 2em;
-            color: var(--neon);
-            text-decoration: none;
-            letter-spacing: 0.1em;
-        }
-        .nav-links {
-            display: none;
-            gap: 20px;
-            align-items: center;
-        }
-        @media (min-width: 768px) {
-            .nav-links { display: flex; } 
-        }
-
-        .nav-link, .cta-nav {
-            font-family: var(--font-title);
-            text-decoration: none;
-            color: var(--light-text);
-            padding: 5px 10px;
-            transition: color 0.3s;
-        }
-        .nav-link:hover {
-            color: var(--neon);
-        }
-        .cta-nav {
-            background-color: var(--neon);
-            color: var(--dark-bg);
-            border-radius: 5px;
-            box-shadow: 0 0 5px var(--neon);
-            margin-left: 15px;
-        }
-        .cta-nav:hover {
-            background-color: white;
-        }
-
-        .dropdown { position: relative; display: inline-block; }
-        .dropdown-content {
-            position: absolute;
-            left: 50%; 
-            transform: translateX(-50%);
-            margin-top: 5px;
-            display: none;
-            background-color: var(--medium-dark);
-            border: 1px solid var(--neon);
-            border-radius: 5px;
-            padding: 5px 0;
-            z-index: 50;
-            min-width: 150px;
-            text-align: center; 
-        }
-        .dropdown:hover .dropdown-content { display: block; }
-        .dropdown-item {
-            display: block;
-            padding: 5px 10px;
-            font-size: 0.875rem;
-            color: var(--light-text);
-            text-decoration: none;
-        }
-        .dropdown-item:hover {
-            background-color: var(--dark-bg);
-            color: var(--neon);
-        }
-
-    
         .hero {
             padding: 60px 0; 
         }
@@ -141,15 +63,15 @@
         @media (min-width: 768px) {
             .hero-grid {
                 flex-direction: row;
-                justify-content: center; /* Center the two column blocks */
-                align-items: flex-start; /* Revert alignment for row mode */
+                justify-content: center; 
+                align-items: flex-start; 
             }
         }
 
         .hero-text {
             flex: 1;
         }
-        .hero-grid .hero-text > {
+        .hero-grid .hero-text > * {
             text-align: center; 
         }
         .hero p:nth-child(3) {
@@ -196,7 +118,7 @@
         }
         .origin-content {
             max-width: 650px;
-            margin: 0 auto;
+            margin: 0 auto; 
             text-align: center; 
         }
         .origin-content p {
@@ -212,6 +134,7 @@
             padding: 15px;
             border-radius: 5px;
             display: inline-block;
+            font-family: var(--font-title);
         }
 
         .features-section { padding: 50px 0; }
@@ -231,7 +154,7 @@
             width: 300px;
             transition: box-shadow 0.3s;
             position: relative;
-            text-align: center;
+            text-align: center; 
         }
         .feature-card:hover {
             box-shadow: 0 0 20px var(--neon);
@@ -254,7 +177,7 @@
         .specs-section h2 { font-size: 3em; margin-bottom: 30px; }
         .spec-list {
             max-width: 600px;
-            margin: 0 auto;
+            margin: 0 auto; 
             display: grid;
             gap: 10px;
         }
@@ -272,9 +195,9 @@
         .spec-item span:last-child {
             font-weight: bold;
             color: var(--neon);
+            font-family: var(--font-title);
         }
 
-        /* --- FAQ/Dossier Section --- */
         .faq-section { 
             padding: 50px 0; 
             background-color: var(--dark-bg); 
@@ -292,7 +215,7 @@
         @media (min-width: 768px) {
             .faq-grid {
                 flex-direction: row-reverse; 
-                text-align: center;
+                text-align: center; 
                 justify-content: center;
             }
         }
@@ -328,10 +251,14 @@
             border-radius: 8px;
             text-align: center; 
         }
-        .faq-item strong { color: var(--neon); }
+        .faq-item strong { 
+            color: var(--neon); 
+            font-family: var(--font-title);
+        }
         .faq-item span {
             display: block;
             margin-top: 5px;
+            font-family: var(--font-body);
         }
         .faq-list p {
             text-align: center; 
@@ -340,7 +267,7 @@
         .preorder-section {
             padding: 50px 0;
             background-color: var(--medium-dark);
-            text-align: center; /* CHANGED: Ensure section aligns center */
+            text-align: center;
         }
         .preorder-section h2 {
             color: white;
@@ -366,7 +293,10 @@
             border-top: 1px solid #1f2937; 
             text-align: center; 
         }
-        .caution-text strong { color: var(--neon); }
+        .caution-text strong { 
+            color: var(--neon); 
+            font-family: var(--font-title);
+        }
 
         .footer {
             background-color: black;
@@ -379,34 +309,6 @@
     </style>
 </head>
 <body>
-
-<header class="header">
-    <div class="container header-content">
-        <a href="#" class="logo">Nightshade</a>
-
-        <nav class="nav-links">
-            <a href="#origin" class="nav-link">Our Origin</a>
-            
-            <div class="dropdown">
-                <a href="#faq" class="nav-link">The Dossier</a>
-                <div class="dropdown-content">
-                    <a href="#faq" class="dropdown-item">Application Protocol</a>
-                    <a href="#faq" class="dropdown-item">Adverse Warnings</a>
-                </div>
-            </div>
-
-            <div class="dropdown">
-                <a href="#features" class="nav-link">The Serum</a>
-                <div class="dropdown-content">
-                    <a href="#features" class="dropdown-item">Potent Effects</a>
-                    <a href="#specs" class="dropdown-item">Formula Specs</a>
-                </div>
-            </div>
-
-            <a href="#preorder" class="cta-nav">Acquire Now</a>
-        </nav>
-    </div>
-</header>
 
 <section id="hero" class="hero">
     <div class="container hero-grid">
@@ -427,9 +329,9 @@
         
         <div class="hero-image">
             <img 
-                src="Assignment2 - product/images/SERUM5.png" 
+                src="SERUM1.jpg" 
                 alt="Nightshade Serum Vial glowing green" 
-                onerror="this.onerror=null; this.src='Assignment2 - product/images/SERUM5.png';"
+                onerror="this.onerror=null; this.src='https://placehold.co/400x500/121212/90EE02?text=SERUM+IMAGE+NIGHTSHADE';"
             >
         </div>
     </div>
@@ -541,9 +443,9 @@
             
             <div class="faq-image">
                 <img 
-                    src="Assignment2 - product/images/SERUM2.png" 
+                    src="SERUM2.jpg" 
                     alt="A mysterious dossier file with glowing neon elements"
-                    onerror="this.onerror=null; this.src='Assignment2 - product/images/SERUM2.png;"
+                    onerror="this.onerror=null; this.src='https://placehold.co/400x500/202020/90EE02?text=DOSSIER+FILE';"
                 >
             </div>
         </div>
@@ -580,4 +482,3 @@
 </footer>
 </body>
 </html>
-
