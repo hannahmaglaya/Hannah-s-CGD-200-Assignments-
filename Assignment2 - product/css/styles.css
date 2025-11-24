@@ -317,7 +317,6 @@ h1, h2, h3 {
     color: var(--neon);
 }
 
-/* FAQ (Dossier) */
 .faq-section { 
     padding: 50px 0; 
     background-color: var(--dark-bg); 
@@ -327,10 +326,10 @@ h1, h2, h3 {
 
 .faq-grid {
     display: flex;
-    flex-direction: column; /* Stack vertically on small screens */
+    flex-direction: column;
     align-items: center;
     gap: 40px;
-    max-width: 1000px; /* Match container max-width */
+    max-width: 1000px;
     margin: 0 auto;
 }
 @media (min-width: 768px) {
@@ -354,11 +353,10 @@ h1, h2, h3 {
     object-fit: cover;
 }
 
-/* NEW: FAQ Text Container Styles */
+
 .faq-content-right {
     flex: 1;
-    /* On mobile, text-align: center from body takes effect. */
-    /* On desktop, we force right alignment. */
+
 }
 .faq-content-right > * {
     text-align: center;
@@ -477,3 +475,4 @@ h1, h2, h3 {
 .modal-content button:hover {
     background-color: white;
 }
+
