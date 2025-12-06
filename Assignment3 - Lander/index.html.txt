@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nightshade Serum: Unleash Potential. Accept Risk.</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>a
+        :root {
+            --neon: #90EE02;
+            --dark-bg: #121212;
+            --medium-dark: #202020;
+            --light-text: #F0F0F0;
+            --gray-text: #9ca3af;
+            --red-warning: #f87171;
+            --font-title: 'Staatliches', cursive;
+            --font-body: 'Roboto Mono', monospace;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            color: var(--neon);
+            margin-top: 0;
+        }
+
+        .container {
+            width: 90%; 
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .header {
+            background-color: var(--dark-bg);
+            border-bottom: 3px solid var(--neon);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 2em;
+            color: var(--neon);
+            text-decoration: none;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+        .logo:hover {
+            color: var(--light-text);
+        }
+        .cta-nav {
+            font-family: var(--font-title);
+            text-decoration: none;
+            background-color: var(--neon);
+            color: var(--dark-bg);
+            padding: 8px 16px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px var(--neon);
+            transition: background-color 0.3s;
+        }
+        .cta-nav:hover {
+            background-color: white;
+        }
+
+        .hero {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 0; 
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero .pre-title {
+            color: var(--red-warning);
+            font-family: var(--font-title);
+            letter-spacing: 0.2em;
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+        }
+        
+        .hero h2 {
+            color: var(--light-text); 
+            font-size: 3.5em; 
+            margin-top: 10px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        .hero h2 span { color: var(--neon); }
+        
+        .hero .description {
+            max-width: 600px;
+            margin: 10px auto 30px auto;
+            color: var(--gray-text);
+            font-size: 1.125rem;
+        }
+        
+        @media (min-width: 768px) {
+            .hero h2 { font-size: 4.5em; }
+        }
+
+        .cta-button {
+            background-color: var(--neon);
+            color: var(--dark-bg);
+            padding: 20px 48px;
+            border-radius: 12px;
+            font-family: var(--font-title);
+            font-size: 2em;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s;
+            box-shadow: 0 0 15px var(--neon);
+            cursor: pointer;
+            margin-bottom: 2rem;
+        }
+        .cta-button:hover { 
+            background-color: white; 
+            transform: scale(1.03);
+        }
+        .cta-button .sub-text {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 0.875rem;
+            display: block;
+            margin-top: 4px;
+            opacity: 0.8;
+        }
+
+        #discount-form-container {
+            max-width: 448px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .discount-card {
+            background-color: var(--medium-dark);
+            padding: 24px;
+            border-radius: 12px;
+            border: 2px solid var(--neon);
+            margin-top: 1rem;
+            box-shadow: 0 0 10px rgba(144, 238, 2, 0.5);
+        }
+        .discount-card .title {
+            color: var(--neon);
+            font-family: var(--font-title);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        .discount-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        @media (min-width: 640px) {
+            .discount-form {
+                flex-direction: row;
+            }
+        }
+
+        .form-input {
+            padding: 12px 16px;
+            border: 2px solid var(--neon);
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            border-radius: 8px;
+            flex-grow: 1;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s;
+        }
+        .form-input::placeholder {
+            color: var(--gray-text);
+        }
+        .form-input:focus {
+            box-shadow: 0 0 8px var(--neon);
+        }
+
+        .form-submit-btn {
+            background-color: var(--neon);
+            color: var(--dark-bg);
+            font-family: var(--font-title);
+            text-transform: uppercase;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 1.125rem;
+            transition: background-color 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+        .form-submit-btn:hover {
+            background-color: white;
+        }
+        
+        .discount-message-text {
+            color: var(--neon);
+            font-family: var(--font-title);
+            font-size: 0.875rem;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        .footer {
+            background-color: black;
+            color: #6b7280; 
+            padding: 20px 0;
+            border-top: 1px solid #374151;
+        }
+        .footer .caution-text {
+            font-size: 0.75rem;
+            color: #4b5563;
+            margin-bottom: 8px;
+            letter-spacing: 0.05em;
+        }
+        .footer .caution-text strong {
+            color: var(--red-warning);
+            font-family: var(--font-title);
+            letter-spacing: 0.1em;
+            font-size: 0.875rem;
+        }
+        .footer .copyright-text {
+            font-size: 0.75rem;
+            color: #374151;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+<header class="header">
+    <div class="container header-content">
+        <a href="#" class="logo">
+            NIGHTSHADE
+        </a>
+        <a href="#acquire" class="cta-nav">
+            Acquire Protocol
+        </a>
+    </div>
+</header>
+
+<main class="hero">
+    <div class="container">
+        <div class="hero-text">
+            
+            <p class="pre-title">Bio-Toxin 47: Immediate Volatility</p>
+            
+            <h2>
+                <span class="block sm:inline">Molecular</span> Overwrite. <br class="hidden sm:inline">Zero Guarantees.
+            </h2>
+            
+            <p class="description">
+                The Nightshade Serum initiates aggressive, non-reversible molecular recoding. This is transformation without a safety net. You acknowledge the extreme risks inherent in the final trial phase.
+            </p>
+            
+            <div class="cta-area">
+                <a href="Assignment2 - product/index.html" class="cta-button">
+                    PROCEED TO ACQUISITION 🛒 
+                    <span class="sub-text">(FINAL PROTOCOL CHECK REQUIRED)</span>
+                </a>
+
+                <div id="discount-form-container">
+                    <div class="discount-card">
+                        <p class="title">CLAIM 15% OFF YOUR FIRST ORDER</p>
+                        <form id="discount-form" class="discount-form">
+                            <input type="email" id="email-input" placeholder="Your classified email..." required 
+                                   class="form-input">
+                            <button type="submit" class="form-submit-btn">
+                                Transmit
+                            </button>
+                        </form>
+                        <p id="discount-message" class="discount-message-text hidden"></p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</main>
+
+<footer class="footer" id="acquire">
+    <div class="container">
+        <p class="caution-text">
+            <strong class="text-red-warning">CRITICAL WARNING:</strong> Serum is for external, uncontrolled use only. Acceptance of **biological destabilization** and **localized flesh necrosis** is implicit in acquisition.
+        </p>
+        <p class="copyright-text">&copy; 2025 The Nightshade Collective | Classified Research Division.</p>
+    </div>
+</footer>
+
+
+</body>
+</html>
