@@ -7,11 +7,11 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Staatliches&family=Roboto+Mono:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <style>a
+    <style>
         :root {
             --neon: #90EE02;
             --dark-bg: #121212;
-            --medium-dark: #202020;
+            --medium-dark: #202020;ac
             --light-text: #F0F0F0;
             --gray-text: #9ca3af;
             --red-warning: #f87171;
